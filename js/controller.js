@@ -59,6 +59,12 @@ angular.module("Runoppa", [])
     $scope.subsectorApicola= false;
     $scope.subsectorCunicola= false;
     $scope.hembra= false;
+    $scope.codorniz= false;
+    $scope.patos= false;
+    $scope.gansos= false;
+    $scope.gallinastraspatio= false;
+    $scope.avestruz= false;
+    $scope.huevos= false;
 
        
     $scope.selected = {};
@@ -435,7 +441,68 @@ $scope.avicolaSelected = function () {
         }
     };
 
+$scope.codornizSelected = function(){
+    if ($scope.codorniz) {
+        $scope.codornizBlock = false;
+    }
+    else{
 
+        $scope.codornizBlock = true;
+    }
+};
+
+
+$scope.patosSelected = function(){
+    if ($scope.patos) {
+        $scope.patosBlock = false;
+    }
+    else{
+
+        $scope.patosBlock = true;
+    }
+};
+
+
+$scope.gansosSelected = function(){
+    if ($scope.gansos) {
+        $scope.gansosBlock = false;
+    }
+    else{
+
+        $scope.gansosBlock = true;
+    }
+};
+
+
+$scope.gallinastraspatioSelected = function(){
+    if ($scope.gallinastraspatio) {
+        $scope.gallinastraspatioBlock = false;
+    }
+    else{
+
+        $scope.gallinastraspatioBlock = true;
+    }
+};
+
+$scope.avestruzSelected = function(){
+    if ($scope.avestruz) {
+        $scope.avestruzBlock = false;
+    }
+    else{
+
+        $scope.avestruzBlock = true;
+    }
+};
+
+$scope.huevosSelected = function(){
+    if ($scope.huevos) {
+        $scope.huevosBlock = false;
+    }
+    else{
+
+        $scope.huevosBlock = true;
+    }
+};
 
 /**subsectorapicola*/
 
