@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html ng-app="Runoppa">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>RUNOPPA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<title>RUNOPPA</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/runoppa.css" type="text/css" rel="stylesheet"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<!-- CSS  -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="css/runoppa.css" type="text/css" rel="stylesheet"/>
+<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
@@ -17,1604 +17,2197 @@
 
 </head>
 <body ng-controller="ProducerController as ctrl" class="ng-cloak">
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo"><img src="logo.png" alt="logo" height="54"></a>
-      
+<nav class="white" role="navigation">
+<div class="nav-wrapper container">
+  <a id="logo-container" href="#" class="brand-logo"><img src="logo.png" alt="logo" height="54"></a>
+  
 
- <ul id="slide-out" class="side-nav">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="producer.html">Productores</a></li>
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Catálogos<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#!">1</a></li>
-                <li><a href="#!">2</a></li>
-                <li><a href="#!">3</a></li>
-                <li><a href="#!">4</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+<ul id="slide-out" class="side-nav">
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="producer.html">Productores</a></li>
+  <li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header">Catálogos<i class="material-icons">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul>
+            <li><a href="#!">1</a></li>
+            <li><a href="#!">2</a></li>
+            <li><a href="#!">3</a></li>
+            <li><a href="#!">4</a></li>
+          </ul>
+        </div>
       </li>
     </ul>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="producer.html">Productores</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Catálogos<i class="material-icons right">arrow_drop_down</i></a></li>
-      <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!">1</a></li>
-        <li><a href="#!">2</a></li>
-        <li><a href="#!">3</a></li>
-        <li><a href="#!">4</a></li>
-      </ul>
-    </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-     
-    </div>
-  </nav>
+  </li>
+</ul>
+<ul class="right hide-on-med-and-down">
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="producer.html">Productores</a></li>
+  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Catálogos<i class="material-icons right">arrow_drop_down</i></a></li>
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">1</a></li>
+    <li><a href="#!">2</a></li>
+    <li><a href="#!">3</a></li>
+    <li><a href="#!">4</a></li>
+  </ul>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+ 
+</div>
+</nav>
 
 
 <div class="container">
-	<div class="formcontainer">
-	  <form ng-submit="ctrl.submit()" name="myForm" class="form right-alert" >
-		  <div class="row">
-		    <div class="col s12 center">
-		      <h5>Tipo de persona</h5>
-		    </div>
-		  </div>
+<div class="formcontainer">
+  <form ng-submit="ctrl.submit()" name="myForm" class="form right-alert" >
+	  <div class="row">
+	    <div class="col s12 center">
+	      <h5>Tipo de persona</h5>
+	    </div>
+	  </div>
 
-		  <div class="row">
-		    <div class="col s12 center">
-    			<span ng-repeat="attr in data">
-      				<input type="radio" name='data-attr' class="form-control" id='{{attr.id}}' value='{{attr.id}}' ng-model="selected.id" /><label for='{{attr.id}}'>{{attr.name}}</label>
-    			</span>
-		    </div>
-		  </div>
+	  <div class="row">
+	    <div class="col s12 center">
+			<span ng-repeat="attr in data">
+  				<input type="radio" name='data-attr' class="form-control" id='{{attr.id}}' value='{{attr.id}}' ng-model="selected.id" /><label for='{{attr.id}}'>{{attr.name}}</label>
+			</span>
+	    </div>
+	  </div>
 
-		  <div class="row" ng-show="block">
-		    <div class="col s12">
-		      <ul class="collapsible" data-collapsible="expandable">
-		        <li>
-		          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Información Persona {{ (selected.id === 'N' ? ' Natural' : (selected.id === 'J' ? ' Jurídica' : '')) }}</div>
-		          <div class="collapsible-body"> <!--Información personal -->
+	  <div class="row" ng-show="block">
+	    <div class="col s12">
+	      <ul class="collapsible" data-collapsible="expandable">
+	        <li>
+	          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Información Persona {{ (selected.id === 'N' ? ' Natural' : (selected.id === 'J' ? ' Jurídica' : '')) }}</div>
+	          <div class="collapsible-body"> <!--Información personal -->
 
-		            <div class="row">
-						<div class="col s6">
-						 <label >{{preidentifier}}</label>
-							 <select class="browser-default" ng-model="selected.value" ng-options="item.name for item in selectedAttr.values track by item.id">
-  							</select>
-					
-						 </div>	
+	            <div class="row">
+					<div class="col s6">
+					 <label >{{preidentifier}}</label>
+						 <select class="browser-default" ng-model="selected.value" ng-options="item.name for item in selectedAttr.values track by item.id">
+							</select>
+				
+					 </div>	
 
-						<div class="input-field col s6">
-                        <input id="identifier" ng-model="identifier" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="first_name" data-error="Campo requerido" data-success="OK!">{{identifierTitle}}</label>
-                        </div>
-
-		            </div>
-
-					<div class="has-error" ng-show="myForm.identifier.$dirty ">
-						<div class="row">
-					 		<div class="col s6">&nbsp;</div>
-					 		<div class="col s6">
-								<div ng-if="myForm.identifier.$error.required">Campo requerido</div>
-                          		<!--<span ng-show="myForm.identifier.$error.required">Campo requerido</span>-->
-                          		<span ng-show="myForm.identifier.$error.minlength">Mínimo 5 caracteres</span>
-                          	</div>
-                        </div>
-                    </div>
-                  
-                      
-
-		            <!--Natural Person-->
-		            <div id="naturalPerson" ng-show="naturalBlock">
-		              <div class="row">
-		                <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="first_name" data-error="Campo requerido" data-success="OK!">Primer nombre</label>
-                        </div>
-		                <div class="input-field col s6">
-                        <input id="second_name" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="second_name" data-error="Campo requerido" data-success="OK!">Segundo nombre</label>
-                        </div>
-		              </div>
-						<div class="has-error" ng-show="myForm.firstname.$dirty ">
-						<div class="row">
-					 		<div class="col s6">
-					 			<div ng-if="myForm.firstname.$error.required">Campo requerido</div>
-                          		
-					 		</div>
-					 		<div class="col s6">
-								<div ng-if="myForm.secondname.$error.required">Campo requerido</div>
-                          		
-                          	</div>
-                        </div>
-                    	</div>		              
-
-		              <div class="row">
-		                <div class="input-field col s6">
-                        <input id="first_surname" type="text" class="validate" required>
-                        <label for="first_surname" data-error="Campo requerido" data-success="OK!">Primer apellido</label>
-                        </div>
-		                
-		                <div class="input-field col s6">
-                        <input id="second_surname" type="text" class="validate" required>
-                        <label for="second_surname" data-error="Campo requerido" data-success="OK!">Segundo apellido</label>
-                        </div>
-		              </div> 
-
-		              <div class="row">
-		                <div class="input-field col s6">
-                        <input id="buildDate" type="date" class="datepicker picker__input" required>
-                        <label for="birthdate" data-error="Campo requerido" data-success="OK!">Fecha de nacimiento</label>
-                        </div>
-		                
-		                <div class="col s2">Sexo</div>  
-		                
-		                <div class="col s4">
-		                  <input class="with-gap" name="sexo" type="radio" value="F" id="F" /> <label for="F">F</label>
-		                  <input class="with-gap" name="sexo" type="radio" value="M" id="M"/> <label for="M">M
-		                </div>
-		              </div>
-
-		              <div class="row">
-		              	<div class="input-field col s6">
-							<select id="civilstate" name="civilstate">
-						    	<option value="" disabled selected>Seleccione estado civil</option>
-						    	<option value="S">Soltero</option>
-				                <option value="C">Casado</option>
-				                <option value="V">Viudo</option>
-				                <option value="D">Divorciado</option>
-				                <option value="U">Unión estable</option>
-						    </select>
-						    <label for="civilstate">Estado civil</label>
-						 </div>
-
-						<div class="input-field col s6">
-							<select id="instructionlevel" name="instructionlevel">
-						    	<option value="" disabled selected>Seleccione nivel de instrucción</option>
-								<option value="S">Primaria</option>
-			                    <option value="C">Bachiller</option>
-			                    <option value="V">T.S.U</option>
-			                    <option value="D">Universitario</option>
-			                    <option value="U">Postgrado</option>
-						    </select>
-						    <label for="instructionlevel">Nivel de instrucción</label>
-						 </div>		                
-		              </div>
-
-		              <div class="row">
-		                <div class="col s4">¿Pertenece a alguna organización popular?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="pop" id="pops" checked/>
-		                   <label for="pops">Si</label>                 
-		                   <input type="radio" name="pop" id="popn" />
-		                   <label for="popn">No</label>  
-		                </div>
-		                <div class="col s3">
-		                   <input type="text" id="op" name="op" placeholder="Organización popular (Tipo/nombre/RIF)">
-		                </div>
-		                <div class="col s2">
-		                   <a href="#">Agregar (Puede pertener a más de una?)</a>
-		                </div>
-		                <div class="col s1">&nbsp;</div>                        
-		              </div>
-
-		              <div class="row">
-		                <div class="col s4">¿Pertenece a alguna comunidad indígena?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="rci" value="S" id= "cis" checked/>
-		                   <label for="cis">Si</label>
-		                   <input type="radio" name="rci" value="N" id= "cin"/>
-		                   <label for="cin"> No </label>
-		                </div>
-		                <div class="col s6">
-		                   <input type="text" id="ci" name="ci" placeholder="Comunidad indigena">
-		                </div>
-		              </div> 
-
-		              <div class="row">
-		                <div class="col s2">¿Es propietario?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="isOwner" id="isOwnerS" checked>
-		                   <label for="isOwnerS">Si</label>
-		                   <input type="radio" name="isOwner" id="isOwnerN">
-		                   <label for="isOwnerN"> No </label>
-		                </div>
-		                
-		                <div class="col s2">¿Es representante legal?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="isLegalRepresentative" id="ilrs" checked/>
-		                   <label for="ilrs">Si</label>
-		                   <input type="radio" name="isLegalRepresentative" id="ilrn" >
-		                   <label for="ilrn"> No </label>
-		                </div>
-		                <div class="col s4">&nbsp;</div>                        
-		              </div>                       
-		            </div><!--Fin de persona Natural-->
-
-		             <!--Inicio Persona Jurídica-->
-		            <div id="legalPerson" ng-show="legalBlock">
-		              <div class="row">
-		                <div class="input-field col s12">
-                        <input id="social_name" type="text" class="validate" required>
-                        <label for="social_name" data-error="Campo requerido" data-success="OK!">Razón social</label>
-                        </div>
-		              </div>
-		            </div> <!--Fin de persona jurídica--> 
-
-		          </div><!--Fin de información personal-->
-		        </li>
-
-		        <li>
-		          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Dueños/productores de la tierra (adicionales)</div>
-		          <div class="collapsible-body">
-		         
-		            <div class="row">
-						<div class="col s6">
-							<label for="nationalityowner">Nacionalidad</label>
-							 <select class="browser-default" ng-model="selected.valueOwner" ng-options="item.name for item in selectedAttrOwner.values track by item.id">
-  							</select>
-						</div>		 
-
-						<div class="input-field col s6">
-                        <input id="identifierowner" ng-model="identifierowner" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="identifierowner" data-error="Campo requerido" data-success="OK!">{{selected.valueOwner.id === 'V' ? 'Cédula': (selected.valueOwner.id === 'P' ? ' Pasaporte' : 'Cédula o pasaporte')}}</label>
-		            </div>
-
-		              <div class="row">
-		                <div class="input-field col s6">
-                        <input id="first_nameO" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="first_nameO" data-error="Campo requerido" data-success="OK!">Primer nombre</label>
-                        </div>
-		                <div class="input-field col s6">
-                        <input id="second_nameO" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="second_nameO" data-error="Campo requerido" data-success="OK!">Segundo nombre</label>
-                        </div>
-		              </div>
-		              <div class="row">
-		                <div class="input-field col s6">
-                        <input id="first_surnameO" type="text" class="validate" required>
-                        <label for="first_surnameO" data-error="Campo requerido" data-success="OK!">Primer apellido</label>
-                        </div>
-		                
-		                <div class="input-field col s6">
-                        <input id="second_surnameO" type="text" class="validate" required>
-                        <label for="second_surnameO" data-error="Campo requerido" data-success="OK!">Segundo apellido</label>
-                        </div>
-		              </div> 
-
-		              <div class="row">
-		                <div class="input-field col s6">
-                        <input id="buildDate" type="date" class="datepicker picker__input" required>
-                        <label for="birthdateO" data-error="Campo requerido" data-success="OK!">Fecha de nacimiento</label>
-                        </div>
-		                
-		                <div class="col s2">Sexo</div>  
-		                
-		                <div class="col s4">
-		                  <input class="with-gap" name="sexoO" type="radio" value="F" id="FO" /> <label for="FO">F</label>
-		                  <input class="with-gap" name="sexoO" type="radio" value="M" id="MO"/> <label for="MO">M
-		                </div>
-		              </div>
-
-		              <div class="row">
-		              	<div class="input-field col s6">
-							<select id="civilstateO" name="civilstate">
-						    	<option value="" disabled selected>Seleccione estado civil</option>
-						    	<option value="S">Soltero</option>
-				                <option value="C">Casado</option>
-				                <option value="V">Viudo</option>
-				                <option value="D">Divorciado</option>
-				                <option value="U">Unión estable</option>
-						    </select>
-						    <label for="civilstateO">Estado civil</label>
-						 </div>
-
-						<div class="input-field col s6">
-							<select id="instructionlevelO" name="instructionlevel">
-						    	<option value="" disabled selected>Seleccione nivel de instrucción</option>
-								<option value="S">Primaria</option>
-			                    <option value="C">Bachiller</option>
-			                    <option value="V">T.S.U</option>
-			                    <option value="D">Universitario</option>
-			                    <option value="U">Postgrado</option>
-						    </select>
-						    <label for="instructionlevelO">Nivel de instrucción</label>
-						 </div>		                
-		              </div>
-
-		              <div class="row">
-		                <div class="col s4">¿Pertenece a alguna organización popular?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="popO" id="popsO" checked/>
-		                   <label for="popsO">Si</label>                 
-		                   <input type="radio" name="pop" id="popnO" />
-		                   <label for="popnO">No</label>  
-		                </div>
-		                <div class="col s3">
-		                   <input type="text" id="opO" name="opO" placeholder="Organización popular (Tipo/nombre/RIF)">
-		                </div>
-		                <div class="col s2">
-		                   <a href="#">Agregar (Puede pertener a más de una?)</a>
-		                </div>
-		                <div class="col s1">&nbsp;</div>                        
-		              </div>
-
-		              <div class="row">
-		                <div class="col s4">¿Pertenece a alguna comunidad indígena?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="rciO" value="S" id= "cisO" checked/>
-		                   <label for="cis">Si</label>
-		                   <input type="radio" name="rciO" value="N" id= "cinO"/>
-		                   <label for="longCultivationName"> No </label>
-		                </div>
-		                <div class="col s6">
-		                   <input type="text" id="ciO" name="ciO" placeholder="Comunidad indigena">
-		                </div>
-		              </div> 
-
-		              <div class="row">
-		                <div class="col s2">¿Es propietario?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="isOwnerO" id="isOwnerSO" checked>
-		                   <label for="isOwnerSO">Si</label>
-		                   <input type="radio" name="isOwnerO" id="isOwnerNO">
-		                   <label for="isOwnerNO"> No </label>
-		                </div>
-		                
-		                <div class="col s2">¿Es representante legal?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="isLegalRepresentativeO" id="ilrsO" checked/>
-		                   <label for="ilrsO">Si</label>
-		                   <input type="radio" name="isLegalRepresentativeO" id="ilrnO" >
-		                   <label for="ilrnO"> No </label>
-		                </div>
-		                <div class="col s2">¿Vive en la unidad de producción?</div>
-		                <div class="col s2">
-		                   <input type="radio" name="isLivingO" id="isLivingsO" checked/>
-		                   <label for="isLivingsO">Si</label>
-		                   <input type="radio" name="isLivingO" id="isLivingnO" >
-		                   <label for="isLivingnO"> No </label>
-		                </div>                     
-		              </div>                       
-		           </div><!--Fin collapse dueño-->
-		        </li>
-		        
-		        <li>
-		          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Datos de contacto</div>
-		          <div class="collapsible-body">
-
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="homephone" type="text" class="validate" required>
-                        <label for="homephone" data-error="Campo requerido" data-success="OK!">Teléfono local</label>
-                        </div>
-						<div class="input-field col s6">
-                        <input id="celphone" type="text" class="validate" required>
-                        <label for="celphone" data-error="Campo requerido" data-success="OK!">Teléfono celular</label>
-                        </div>
-		            </div>  
-		            
-		            <!--Legal person-->
-		            <div id="legalPerson" ng-show="legalBlock">
-		              <div class="row">
-		                <div class="col s2">Teléfono local 2</div>
-		            
-		                <div class="col s4">
-		                  <input type="text" id="homephone2" name="homephone2" placeholder="Teléfono local 2">
-		                </div>
-		            
-		                <div class="col s2">Teléfono celular 2</div>
-		            
-		                <div class="col s4">
-		                    <input type="text" id="delphone2" name="celphone2" placeholder="Teléfono celular 2">
-		                </div>
-		              </div>
-		            </div> 
-		          <!--End Legal Person-->
-
-		            <div class="row">
-		              	<div class="input-field col s6">
-                        <input id="autocomplete-input" type="text" class="autocomplete" required>
-                        <label for="autocomplete-input" data-error="Campo requerido" data-success="OK!">Estado</label>
-                        </div>
-
-
- 						<div class="input-field col s6">
-                        <input id="city" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="city" data-error="Campo requerido" data-success="OK!">Ciudad</label>
-                        </div>
-		            </div>
-
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="municipality" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="municipality" data-error="Campo requerido" data-success="OK!">Municipio</label>
-                        </div>
-
-						<div class="input-field col s6">
-                        <input id="parish" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="parish" data-error="Campo requerido" data-success="OK!">Parroquia</label>
-                        </div>                        
-		            </div>
-
-		            <div class="row">
-		         		<div class="input-field col s6">
-		              	 <textarea id="address" class="materialize-textarea" data-length="240"></textarea>
-            			<label for="textarea1">Dirección</label>
-		             	</div>
-	                <div class="col s2">¿Vive en la unidad de producción?</div>
-		                <div class="col s4">
-		                  <input type="radio" name="isLiving" value="Si" id="isLivingS"/> 
-		                  <label for="isLivingS">Si</label> 
-		                  <input type="radio" name="isLiving" value="No" id="isLivingN"/>
-		                  <label for="isLivingN">No</label>
-		                </div>
-		              </div> 
-					<div class="row">
-						<div class="input-field col s6">
-                        <input id="email" type="email" class="validate" required>
-                        <label for="email" data-error="Campo requerido" data-success="OK!">Correo electrónico</label>
-                        </div>
 					<div class="input-field col s6">
-                        <input id="socialnetworks" type="text" class="validate" required>
-                        <label for="socialnetworks" data-error="Campo requerido" data-success="OK!">Redes sociales</label>
-                        </div>                        
-                     </div>
-		            <hr>
+                    <input id="identifier" ng-model="identifier" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="first_name" data-error="Campo requerido" data-success="OK!">{{identifierTitle}}</label>
+                    </div>
 
-		          <!--Datos de contacto--> 
-		          <div class="row">
-		            <div class="col s12">
-		             <h5>Información de contactos (¿sólo aplica a persona natural?)</h5>
-		            </div>
-		          </div> 
+	            </div>
 
-		          <div class="row">
-						<div class="input-field col s6">
-                        <input id="preidentifiercontact" type="text" class="validate" required>
-                        <label for="preidentifiercontact" data-error="Campo requerido" data-success="OK!">Nacionalidad(se incorporó)</label>
-                        </div>
-
-						<div class="input-field col s6">
-                        <input id="identifiercontact" type="text" class="validate" required>
-                        <label for="identifiercontact" data-error="Campo requerido" data-success="OK!">Cédula o pasaporte(se incorporó)</label>
-                        </div>                        
-		          </div>
-
-		          <div class="row">
-						<div class="input-field col s6">
-                        <input id="contactFirstname" type="text" class="validate" required>
-                        <label for="contactFirstname" data-error="Campo requerido" data-success="OK!">Primer Nombre</label>
-                        </div>               		          
-		            
-		            	<div class="input-field col s6">
-                        <input id="secondnamecontact" type="text" class="validate" required>
-                        <label for="secondnamecontact" data-error="Campo requerido" data-success="OK!">Segundo nombre</label>
-                        </div> 
-		          </div>
-
-		          <div class="row">
-						<div class="input-field col s6">
-                        <input id="lastnamecontact" type="text" class="validate" required>
-                        <label for="lastnamecontact" data-error="Campo requerido" data-success="OK!">Primer apellido</label>
-                        </div>
-                        <div class="input-field col s6">
-                        <input id="surnamecontact" type="text" class="validate" required>
-                        <label for="surnamecontact" data-error="Campo requerido" data-success="OK!">Segundo apellido</label>
-                        </div>		   
-		          </div>
-
-		          <div class="row">
-						<div class="input-field col s6">
-                        <input id="contactPhone" type="text" class="validate" required>
-                        <label for="contactPhone" data-error="Campo requerido" data-success="OK!">Teléfono</label>
-                        </div>	
-						<div class="input-field col s6">
-                        <input id="familiarRelation" type="text" class="validate" required>
-                        <label for="familiarRelation" data-error="Campo requerido" data-success="OK!">Familiar/otro</label>
-                        </div>	                        	          
-		          </div>
-		          
-		          <div class="row">
-		            <div class="col s12 center">
-		              <a href="#">Agregar (Se puede agregar más de uno)</a>
-		            </div>
-		          </div>                    
-
-		          </div> <!--Fin datos de contacto-->
-		        </li>
-		        
-		        <li>
-		          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Certificación previa</div>
-		          <div class="collapsible-body">
-		                   
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="serial" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="serial" data-error="Campo requerido" data-success="OK!">Serial</label>
-                        </div>
-						<div class="input-field col s6">
-                        <input id="statuscertificate" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="statuscertificate" data-error="Campo requerido" data-success="OK!">Estado (Tipo?)</label>
-                        </div>                        	
-		            </div>
-
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="issuedate" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="issuedate" data-error="Campo requerido" data-success="OK!">Fecha emisión</label>
-                        </div>		
-						<div class="input-field col s6">
-                        <input id="expdate" type="text" class="validate identifier form-control input-sm" required>
-                        <label for="expdate" data-error="Campo requerido" data-success="OK!">Fecha expedición</label>
-                        </div>		                                    
-		            </div>                                  
-		          </div> <!--Fin certificación previa-->
-		        </li>    
-		        
-		        <li>
-		          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Unidad de producción</div>
-		          <div class="collapsible-body">
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="documenttype" type="text" class="validate" required>
-                        <label for="documenttype" data-error="Campo requerido" data-success="OK!">Tipo documento</label>
-                        </div>	
-
-						<div class="input-field col s6">
-                        <input id="docnumber" type="text" class="validate" required>
-                        <label for="docnumber" data-error="Campo requerido" data-success="OK!">Nro. documento tierra</label>
-                        </div>			             
-		            </div>
-
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="unityname" type="text" class="validate" required>
-                        <label for="unityname" data-error="Campo requerido" data-success="OK!">Nombre</label>
-                        </div>	
-
-						<div class="input-field col s6">
-                        <input id="totalsurface" type="text" class="validate" required>
-                        <label for="totalsurface" data-error="Campo requerido" data-success="OK!">Total superficie (km2)</label>
-                        </div>	
-		            </div>
-
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="usablesurface" type="text" class="validate" required>
-                        <label for="usablesurface" data-error="Campo requerido" data-success="OK!">Superficie aprovechada (km2)</label>
-                        </div>	
-
-						<div class="input-field col s6">
-                        <input id="usedsurface" type="text" class="validate" required>
-                        <label for="usedsurface" data-error="Campo requerido" data-success="OK!">Superficie aprovechable (km2)</label>
-                        </div>	
-		            </div>
-
-		            <div class="row">
-						<div class="input-field col s6">
-                        <input id="usablesurface" type="text" class="validate" required>
-                        <label for="usablesurface" data-error="Campo requerido" data-success="OK!">Tipo de tenencia</label>
-                        </div>			            
-
-		            	<div class="col s6">&nbsp;</div>
-		            </div>
-
+				<div class="has-error" ng-show="myForm.identifier.$dirty ">
 					<div class="row">
-		              <div class="col s2">¿Se encuentra adscrita a algún organismo?</div>
+				 		<div class="col s6">&nbsp;</div>
+				 		<div class="col s6">
+							<div ng-if="myForm.identifier.$error.required">Campo requerido</div>
+                      		<!--<span ng-show="myForm.identifier.$error.required">Campo requerido</span>-->
+                      		<span ng-show="myForm.identifier.$error.minlength">Mínimo 5 caracteres</span>
+                      	</div>
+                    </div>
+                </div>
+              
+                  
 
-		              <div class="col s4">
-		                <input type="radio" name="organism" id="organisms" value="Si"/> 
-		                <label for="organisms">Si</label>
-		                <input type="radio" name="organism" id="organismn" value="No"/>
-		                <label for="organismn">No</label>
-		              </div>
-
-		              <div class="input-field col s6">
-                        <input id="organismup" type="text" class="validate" required>
-                        <label for="organismup" data-error="Campo requerido" data-success="OK!">Información del organismo</label>
-                        </div>
-		            </div>
-
-
-		            <div class="row">
-		              <div class="col s2">Capacidad de exportación</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="export" id="exportsi" value="Si"/> 
-		                <label for="exportsi">Si</label>
-		                <input type="radio" name="export" id="exportno" value="No"/>
-		                <label for="exportno">No</label>
-		              </div>
-
-		              <div class="col s2">Necesidad de importación</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="import" id="imports" value="Si"/> 
-		                <label for="imports">Si</label>
-		                <input type="radio" name="import" id="importn" value="No"/>
-		                <label for="importn">No</label>
-		              </div>
-		            </div>
-
-		            <div class="row">
-		              <div class="col s2">Departamento control calidad(Dónde se refleja en el formulario? *)</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="qualitydpt" id="qualitydpts" value="Si"/> 
-		                <label for="qualitydpts">Si</label>
-		                <input type="radio" name="qualitydpt" name="qualitydptn" value="No"/>
-		                <label for="qualitydptn">No</label>
-		              </div>
-
-		              <div class="col s2">Departamento investigación (*)</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="investigatedpt" id="investigatedpts" value="Si"/> 
-		                <label for="investigatedpts">Si</label>
-		                <input type="radio" name="investigatedpt" name="investigatedptn" value="No"/>
-		                <label for="investigatedpts">No</label>
-		              </div>
-		            </div>
-
-		            <div class="row">
-		              <div class="col s2">Plan piloto</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="pilotplan" id="pilotplans" value="Si"/> 
-		                <label for="pilotplans">Si</label>
-		                <input type="radio" name="pilotplan" id="pilotplann" value="No"/>
-		                <label for="pilotplann">No</label>
-		              </div>
-
-		              <div class="col s2">Participación comunidad (*)</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="community" id="communitys" value="Si"/> 
-		                <label for="communitys">Si</label>
-		                <input type="radio" name="community" id="communityn" value="No"/>
-		                <label for="communityn">No</label>
-		              </div>
-		            </div>
-
-		            <div class="row">
-		              <div class="col s2">Sica (*)</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="sica" id="sicas" value="Si"/> 
-		                <label for="sicas">Si</label>
-		                <input type="radio" name="sica" id="sican" value="No"/>
-		                <label for="sican">No</label>
-		              </div>
-
-		              <div class="col s2">Sunagro (*)</div>
-
-		              <div class="col s4">
-		                <input type="radio" name="sunagro" id="sunagros" value="Si"/> 
-		                <label for="sunagros">Si</label>
-		                <input type="radio" name="sunagro" id="sunagron" value="No"/>
-		                <label for="sunagron">No</label>
-		              </div>
-		            </div>
-
-		            
-		            <hr>
-		            <div class="row">
-		              <div class="col s12">&nbsp;</div>
-		            </div> 
-
-		            <div class="row">
-						<div class="input-field col s6">
-							<select id="selectedServices" name="selectedServices">
-						    	<option value="" disabled selected>Seleccione los servicios básicos</option>
-								<option>Agua potable</option>
-				                <option>Agua servidas</option>
-				                <option>Telefonía celular</option>
-				                <option>Transporte público</option>
-				                <option>Telefonía fija</option>
-				                <option>Vías asfaltadas</option>
-				                <option>Vías por asfaltar</option>
-				                <option>Internet</option>
-						    </select>
-						    <label for="selectedServices">Servicios básicos</label>
-						 </div>		
-						<div class="input-field col s6">
-							<select id="selectedWater" name="selectedWater">
-						    	<option value="" disabled selected>Seleccione la principal fuente de agua</option>
-			                	<option>Hurto</option>
-			                	<option>Incendio</option>
-			                	<option>Inundación</option>
-			                	<option>Sequía</option>
-		                    </select>
-						    <label for="selectedWater">Principal fuente de agua</label>
-						</div>	
-							
-		            </div>
+	            <!--Natural Person-->
+	            <div id="naturalPerson" ng-show="naturalBlock">
+	              <div class="row">
+	                <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="first_name" data-error="Campo requerido" data-success="OK!">Primer nombre</label>
+                    </div>
+	                <div class="input-field col s6">
+                    <input id="second_name" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="second_name" data-error="Campo requerido" data-success="OK!">Segundo nombre</label>
+                    </div>
+	              </div>
+					<div class="has-error" ng-show="myForm.firstname.$dirty ">
 					<div class="row">
-						<div class="input-field col s6">
-							<select id="selectedVia" name="selectedVia">
-						    	<option value="" disabled selected>Seleccione la vialidad agrícola</option>
-			                	<option>Asfaltada</option>
-		                		<option>Garzón</option>
-		                		<option>Porces de asfalto</option>
-		                		<option>Tierras</option>
-		                		<option>Concreto</option>
-		                		<option>Otro</option>
-		                    </select>
-						    <label for="selectedVia">Vialidad agrícola</label>
-						</div>	
+				 		<div class="col s6">
+				 			<div ng-if="myForm.firstname.$error.required">Campo requerido</div>
+                      		
+				 		</div>
+				 		<div class="col s6">
+							<div ng-if="myForm.secondname.$error.required">Campo requerido</div>
+                      		
+                      	</div>
+                    </div>
+                	</div>		              
+
+	              <div class="row">
+	                <div class="input-field col s6">
+                    <input id="first_surname" type="text" class="validate" required>
+                    <label for="first_surname" data-error="Campo requerido" data-success="OK!">Primer apellido</label>
+                    </div>
+	                
+	                <div class="input-field col s6">
+                    <input id="second_surname" type="text" class="validate" required>
+                    <label for="second_surname" data-error="Campo requerido" data-success="OK!">Segundo apellido</label>
+                    </div>
+	              </div> 
+
+	              <div class="row">
+	                <div class="input-field col s6">
+                    <input id="buildDate" type="date" class="datepicker picker__input" required>
+                    <label for="birthdate" data-error="Campo requerido" data-success="OK!">Fecha de nacimiento</label>
+                    </div>
+	                
+	                <div class="col s2">Sexo</div>  
+	                
+	                <div class="col s4">
+	                  <input class="with-gap" name="sexo" type="radio" value="F" id="F" /> <label for="F">F</label>
+	                  <input class="with-gap" name="sexo" type="radio" value="M" id="M"/> <label for="M">M
+	                </div>
+	              </div>
+
+	              <div class="row">
+	              	<div class="input-field col s6">
+						<select id="civilstate" name="civilstate">
+					    	<option value="" disabled selected>Seleccione estado civil</option>
+					    	<option value="S">Soltero</option>
+			                <option value="C">Casado</option>
+			                <option value="V">Viudo</option>
+			                <option value="D">Divorciado</option>
+			                <option value="U">Unión estable</option>
+					    </select>
+					    <label for="civilstate">Estado civil</label>
+					 </div>
+
+					<div class="input-field col s6">
+						<select id="instructionlevel" name="instructionlevel">
+					    	<option value="" disabled selected>Seleccione nivel de instrucción</option>
+							<option value="S">Primaria</option>
+		                    <option value="C">Bachiller</option>
+		                    <option value="V">T.S.U</option>
+		                    <option value="D">Universitario</option>
+		                    <option value="U">Postgrado</option>
+					    </select>
+					    <label for="instructionlevel">Nivel de instrucción</label>
+					 </div>		                
+	              </div>
+
+	              <div class="row">
+	                <div class="col s4">¿Pertenece a alguna organización popular?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="pop" id="pops" checked/>
+	                   <label for="pops">Si</label>                 
+	                   <input type="radio" name="pop" id="popn" />
+	                   <label for="popn">No</label>  
+	                </div>
+	                <div class="col s3">
+	                   <input type="text" id="op" name="op" placeholder="Organización popular (Tipo/nombre/RIF)">
+	                </div>
+	                <div class="col s2">
+	                   <a href="#">Agregar (Puede pertener a más de una?)</a>
+	                </div>
+	                <div class="col s1">&nbsp;</div>                        
+	              </div>
+
+	              <div class="row">
+	                <div class="col s4">¿Pertenece a alguna comunidad indígena?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="rci" value="S" id= "cis" checked/>
+	                   <label for="cis">Si</label>
+	                   <input type="radio" name="rci" value="N" id= "cin"/>
+	                   <label for="cin"> No </label>
+	                </div>
+	                <div class="col s6">
+	                   <input type="text" id="ci" name="ci" placeholder="Comunidad indigena">
+	                </div>
+	              </div> 
+
+	              <div class="row">
+	                <div class="col s2">¿Es propietario?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="isOwner" id="isOwnerS" checked>
+	                   <label for="isOwnerS">Si</label>
+	                   <input type="radio" name="isOwner" id="isOwnerN">
+	                   <label for="isOwnerN"> No </label>
+	                </div>
+	                
+	                <div class="col s2">¿Es representante legal?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="isLegalRepresentative" id="ilrs" checked/>
+	                   <label for="ilrs">Si</label>
+	                   <input type="radio" name="isLegalRepresentative" id="ilrn" >
+	                   <label for="ilrn"> No </label>
+	                </div>
+	                <div class="col s4">&nbsp;</div>                        
+	              </div>                       
+	            </div><!--Fin de persona Natural-->
+
+	             <!--Inicio Persona Jurídica-->
+	            <div id="legalPerson" ng-show="legalBlock">
+	              <div class="row">
+	                <div class="input-field col s12">
+                    <input id="social_name" type="text" class="validate" required>
+                    <label for="social_name" data-error="Campo requerido" data-success="OK!">Razón social</label>
+                    </div>
+	              </div>
+	            </div> <!--Fin de persona jurídica--> 
+
+	          </div><!--Fin de información personal-->
+	        </li>
+
+	        <li>
+	          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Dueños/productores de la tierra (adicionales)</div>
+	          <div class="collapsible-body">
+	         
+	            <div class="row">
+					<div class="col s6">
+						<label for="nationalityowner">Nacionalidad</label>
+						 <select class="browser-default" ng-model="selected.valueOwner" ng-options="item.name for item in selectedAttrOwner.values track by item.id">
+							</select>
+					</div>		 
+
+					<div class="input-field col s6">
+                    <input id="identifierowner" ng-model="identifierowner" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="identifierowner" data-error="Campo requerido" data-success="OK!">{{selected.valueOwner.id === 'V' ? 'Cédula': (selected.valueOwner.id === 'P' ? ' Pasaporte' : 'Cédula o pasaporte')}}</label>
+	            </div>
+
+	              <div class="row">
+	                <div class="input-field col s6">
+                    <input id="first_nameO" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="first_nameO" data-error="Campo requerido" data-success="OK!">Primer nombre</label>
+                    </div>
+	                <div class="input-field col s6">
+                    <input id="second_nameO" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="second_nameO" data-error="Campo requerido" data-success="OK!">Segundo nombre</label>
+                    </div>
+	              </div>
+	              <div class="row">
+	                <div class="input-field col s6">
+                    <input id="first_surnameO" type="text" class="validate" required>
+                    <label for="first_surnameO" data-error="Campo requerido" data-success="OK!">Primer apellido</label>
+                    </div>
+	                
+	                <div class="input-field col s6">
+                    <input id="second_surnameO" type="text" class="validate" required>
+                    <label for="second_surnameO" data-error="Campo requerido" data-success="OK!">Segundo apellido</label>
+                    </div>
+	              </div> 
+
+	              <div class="row">
+	                <div class="input-field col s6">
+                    <input id="buildDate" type="date" class="datepicker picker__input" required>
+                    <label for="birthdateO" data-error="Campo requerido" data-success="OK!">Fecha de nacimiento</label>
+                    </div>
+	                
+	                <div class="col s2">Sexo</div>  
+	                
+	                <div class="col s4">
+	                  <input class="with-gap" name="sexoO" type="radio" value="F" id="FO" /> <label for="FO">F</label>
+	                  <input class="with-gap" name="sexoO" type="radio" value="M" id="MO"/> <label for="MO">M
+	                </div>
+	              </div>
+
+	              <div class="row">
+	              	<div class="input-field col s6">
+						<select id="civilstateO" name="civilstate">
+					    	<option value="" disabled selected>Seleccione estado civil</option>
+					    	<option value="S">Soltero</option>
+			                <option value="C">Casado</option>
+			                <option value="V">Viudo</option>
+			                <option value="D">Divorciado</option>
+			                <option value="U">Unión estable</option>
+					    </select>
+					    <label for="civilstateO">Estado civil</label>
+					 </div>
+
+					<div class="input-field col s6">
+						<select id="instructionlevelO" name="instructionlevel">
+					    	<option value="" disabled selected>Seleccione nivel de instrucción</option>
+							<option value="S">Primaria</option>
+		                    <option value="C">Bachiller</option>
+		                    <option value="V">T.S.U</option>
+		                    <option value="D">Universitario</option>
+		                    <option value="U">Postgrado</option>
+					    </select>
+					    <label for="instructionlevelO">Nivel de instrucción</label>
+					 </div>		                
+	              </div>
+
+	              <div class="row">
+	                <div class="col s4">¿Pertenece a alguna organización popular?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="popO" id="popsO" checked/>
+	                   <label for="popsO">Si</label>                 
+	                   <input type="radio" name="pop" id="popnO" />
+	                   <label for="popnO">No</label>  
+	                </div>
+	                <div class="col s3">
+	                   <input type="text" id="opO" name="opO" placeholder="Organización popular (Tipo/nombre/RIF)">
+	                </div>
+	                <div class="col s2">
+	                   <a href="#">Agregar (Puede pertener a más de una?)</a>
+	                </div>
+	                <div class="col s1">&nbsp;</div>                        
+	              </div>
+
+	              <div class="row">
+	                <div class="col s4">¿Pertenece a alguna comunidad indígena?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="rciO" value="S" id= "cisO" checked/>
+	                   <label for="cis">Si</label>
+	                   <input type="radio" name="rciO" value="N" id= "cinO"/>
+	                   <label for="longCultivationName"> No </label>
+	                </div>
+	                <div class="col s6">
+	                   <input type="text" id="ciO" name="ciO" placeholder="Comunidad indigena">
+	                </div>
+	              </div> 
+
+	              <div class="row">
+	                <div class="col s2">¿Es propietario?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="isOwnerO" id="isOwnerSO" checked>
+	                   <label for="isOwnerSO">Si</label>
+	                   <input type="radio" name="isOwnerO" id="isOwnerNO">
+	                   <label for="isOwnerNO"> No </label>
+	                </div>
+	                
+	                <div class="col s2">¿Es representante legal?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="isLegalRepresentativeO" id="ilrsO" checked/>
+	                   <label for="ilrsO">Si</label>
+	                   <input type="radio" name="isLegalRepresentativeO" id="ilrnO" >
+	                   <label for="ilrnO"> No </label>
+	                </div>
+	                <div class="col s2">¿Vive en la unidad de producción?</div>
+	                <div class="col s2">
+	                   <input type="radio" name="isLivingO" id="isLivingsO" checked/>
+	                   <label for="isLivingsO">Si</label>
+	                   <input type="radio" name="isLivingO" id="isLivingnO" >
+	                   <label for="isLivingnO"> No </label>
+	                </div>                     
+	              </div>                       
+	           </div><!--Fin collapse dueño-->
+	        </li>
+	        
+	        <li>
+	          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Datos de contacto</div>
+	          <div class="collapsible-body">
+
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="homephone" type="text" class="validate" required>
+                    <label for="homephone" data-error="Campo requerido" data-success="OK!">Teléfono local</label>
+                    </div>
+					<div class="input-field col s6">
+                    <input id="celphone" type="text" class="validate" required>
+                    <label for="celphone" data-error="Campo requerido" data-success="OK!">Teléfono celular</label>
+                    </div>
+	            </div>  
+	            
+	            <!--Legal person-->
+	            <div id="legalPerson" ng-show="legalBlock">
+	              <div class="row">
+	                <div class="col s2">Teléfono local 2</div>
+	            
+	                <div class="col s4">
+	                  <input type="text" id="homephone2" name="homephone2" placeholder="Teléfono local 2">
+	                </div>
+	            
+	                <div class="col s2">Teléfono celular 2</div>
+	            
+	                <div class="col s4">
+	                    <input type="text" id="delphone2" name="celphone2" placeholder="Teléfono celular 2">
+	                </div>
+	              </div>
+	            </div> 
+	          <!--End Legal Person-->
+
+	            <div class="row">
+	              	<div class="input-field col s6">
+                    <input id="autocomplete-input" type="text" class="autocomplete" required>
+                    <label for="autocomplete-input" data-error="Campo requerido" data-success="OK!">Estado</label>
+                    </div>
+
 
 						<div class="input-field col s6">
-							<select id="selectedDestiny" name="selectedDestiny">
-						    	<option value="" disabled selected>Seleccione el destino de la producción</option>
-					            <option>Autoconsumo</option>
-				                <option>Mercado</option>
-				                <option>Intermedio</option>
-				                <option>A puerta de granja</option>
-				                <option>Industria</option>
-				                <option>Otro</option>
-		                    </select>
-						    <label for="selectedDestiny">Destino de la producción</label>
-						</div>	
-		            </div>	
-		            <div class="row">
-						<div class="input-field col s12">
-							<select id="selectedTransport" ng-model="selectedTransport" name="selectedTransport" multiple>
-						    	<option value="" disabled selected>Seleccione el medio de transporte</option>
-								<option>Carro</option>
-			                  	<option>Camioneta</option>
-			                  	<option>Pickup</option>
-			                	<option>Camión</option>
-						    </select>
-						    <label for="selectedTransport">Transporte???</label>
-						</div>	
+                    <input id="city" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="city" data-error="Campo requerido" data-success="OK!">Ciudad</label>
+                    </div>
+	            </div>
+
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="municipality" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="municipality" data-error="Campo requerido" data-success="OK!">Municipio</label>
+                    </div>
+
+					<div class="input-field col s6">
+                    <input id="parish" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="parish" data-error="Campo requerido" data-success="OK!">Parroquia</label>
+                    </div>                        
+	            </div>
+
+	            <div class="row">
+	         		<div class="input-field col s6">
+	              	 <textarea id="address" class="materialize-textarea" data-length="240"></textarea>
+        			<label for="textarea1">Dirección</label>
+	             	</div>
+                <div class="col s2">¿Vive en la unidad de producción?</div>
+	                <div class="col s4">
+	                  <input type="radio" name="isLiving" value="Si" id="isLivingS"/> 
+	                  <label for="isLivingS">Si</label> 
+	                  <input type="radio" name="isLiving" value="No" id="isLivingN"/>
+	                  <label for="isLivingN">No</label>
+	                </div>
+	              </div> 
+				<div class="row">
+					<div class="input-field col s6">
+                    <input id="email" type="email" class="validate" required>
+                    <label for="email" data-error="Campo requerido" data-success="OK!">Correo electrónico</label>
+                    </div>
+				<div class="input-field col s6">
+                    <input id="socialnetworks" type="text" class="validate" required>
+                    <label for="socialnetworks" data-error="Campo requerido" data-success="OK!">Redes sociales</label>
+                    </div>                        
+                 </div>
+	            <hr>
+
+	          <!--Datos de contacto--> 
+	          <div class="row">
+	            <div class="col s12">
+	             <h5>Información de contactos (¿sólo aplica a persona natural?)</h5>
+	            </div>
+	          </div> 
+
+	          <div class="row">
+					<div class="input-field col s6">
+                    <input id="preidentifiercontact" type="text" class="validate" required>
+                    <label for="preidentifiercontact" data-error="Campo requerido" data-success="OK!">Nacionalidad(se incorporó)</label>
+                    </div>
+
+					<div class="input-field col s6">
+                    <input id="identifiercontact" type="text" class="validate" required>
+                    <label for="identifiercontact" data-error="Campo requerido" data-success="OK!">Cédula o pasaporte(se incorporó)</label>
+                    </div>                        
+	          </div>
+
+	          <div class="row">
+					<div class="input-field col s6">
+                    <input id="contactFirstname" type="text" class="validate" required>
+                    <label for="contactFirstname" data-error="Campo requerido" data-success="OK!">Primer Nombre</label>
+                    </div>               		          
+	            
+	            	<div class="input-field col s6">
+                    <input id="secondnamecontact" type="text" class="validate" required>
+                    <label for="secondnamecontact" data-error="Campo requerido" data-success="OK!">Segundo nombre</label>
+                    </div> 
+	          </div>
+
+	          <div class="row">
+					<div class="input-field col s6">
+                    <input id="lastnamecontact" type="text" class="validate" required>
+                    <label for="lastnamecontact" data-error="Campo requerido" data-success="OK!">Primer apellido</label>
+                    </div>
+                    <div class="input-field col s6">
+                    <input id="surnamecontact" type="text" class="validate" required>
+                    <label for="surnamecontact" data-error="Campo requerido" data-success="OK!">Segundo apellido</label>
+                    </div>		   
+	          </div>
+
+	          <div class="row">
+					<div class="input-field col s6">
+                    <input id="contactPhone" type="text" class="validate" required>
+                    <label for="contactPhone" data-error="Campo requerido" data-success="OK!">Teléfono</label>
+                    </div>	
+					<div class="input-field col s6">
+                    <input id="familiarRelation" type="text" class="validate" required>
+                    <label for="familiarRelation" data-error="Campo requerido" data-success="OK!">Familiar/otro</label>
+                    </div>	                        	          
+	          </div>
+	          
+	          <div class="row">
+	            <div class="col s12 center">
+	              <a href="#">Agregar (Se puede agregar más de uno)</a>
+	            </div>
+	          </div>                    
+
+	          </div> <!--Fin datos de contacto-->
+	        </li>
+	        
+	        <li>
+	          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Certificación previa</div>
+	          <div class="collapsible-body">
+	                   
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="serial" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="serial" data-error="Campo requerido" data-success="OK!">Serial</label>
+                    </div>
+					<div class="input-field col s6">
+                    <input id="statuscertificate" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="statuscertificate" data-error="Campo requerido" data-success="OK!">Estado (Tipo?)</label>
+                    </div>                        	
+	            </div>
+
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="issuedate" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="issuedate" data-error="Campo requerido" data-success="OK!">Fecha emisión</label>
+                    </div>		
+					<div class="input-field col s6">
+                    <input id="expdate" type="text" class="validate identifier form-control input-sm" required>
+                    <label for="expdate" data-error="Campo requerido" data-success="OK!">Fecha expedición</label>
+                    </div>		                                    
+	            </div>                                  
+	          </div> <!--Fin certificación previa-->
+	        </li>    
+	        
+	        <li>
+	          <div class="collapsible-header"><i class="material-icons">zoom_in</i>Unidad de producción</div>
+	          <div class="collapsible-body">
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="documenttype" type="text" class="validate" required>
+                    <label for="documenttype" data-error="Campo requerido" data-success="OK!">Tipo documento</label>
+                    </div>	
+
+					<div class="input-field col s6">
+                    <input id="docnumber" type="text" class="validate" required>
+                    <label for="docnumber" data-error="Campo requerido" data-success="OK!">Nro. documento tierra</label>
+                    </div>			             
+	            </div>
+
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="unityname" type="text" class="validate" required>
+                    <label for="unityname" data-error="Campo requerido" data-success="OK!">Nombre</label>
+                    </div>	
+
+					<div class="input-field col s6">
+                    <input id="totalsurface" type="text" class="validate" required>
+                    <label for="totalsurface" data-error="Campo requerido" data-success="OK!">Total superficie (km2)</label>
+                    </div>	
+	            </div>
+
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="usablesurface" type="text" class="validate" required>
+                    <label for="usablesurface" data-error="Campo requerido" data-success="OK!">Superficie aprovechada (km2)</label>
+                    </div>	
+
+					<div class="input-field col s6">
+                    <input id="usedsurface" type="text" class="validate" required>
+                    <label for="usedsurface" data-error="Campo requerido" data-success="OK!">Superficie aprovechable (km2)</label>
+                    </div>	
+	            </div>
+
+	            <div class="row">
+					<div class="input-field col s6">
+                    <input id="usablesurface" type="text" class="validate" required>
+                    <label for="usablesurface" data-error="Campo requerido" data-success="OK!">Tipo de tenencia</label>
+                    </div>			            
+
+	            	<div class="col s6">&nbsp;</div>
+	            </div>
+
+				<div class="row">
+	              <div class="col s2">¿Se encuentra adscrita a algún organismo?</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="organism" id="organisms" value="Si"/> 
+	                <label for="organisms">Si</label>
+	                <input type="radio" name="organism" id="organismn" value="No"/>
+	                <label for="organismn">No</label>
+	              </div>
+
+	              <div class="input-field col s6">
+                    <input id="organismup" type="text" class="validate" required>
+                    <label for="organismup" data-error="Campo requerido" data-success="OK!">Información del organismo</label>
+                    </div>
+	            </div>
+
+
+	            <div class="row">
+	              <div class="col s2">Capacidad de exportación</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="export" id="exportsi" value="Si"/> 
+	                <label for="exportsi">Si</label>
+	                <input type="radio" name="export" id="exportno" value="No"/>
+	                <label for="exportno">No</label>
+	              </div>
+
+	              <div class="col s2">Necesidad de importación</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="import" id="imports" value="Si"/> 
+	                <label for="imports">Si</label>
+	                <input type="radio" name="import" id="importn" value="No"/>
+	                <label for="importn">No</label>
+	              </div>
+	            </div>
+
+	            <div class="row">
+	              <div class="col s2">Departamento control calidad(Dónde se refleja en el formulario? *)</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="qualitydpt" id="qualitydpts" value="Si"/> 
+	                <label for="qualitydpts">Si</label>
+	                <input type="radio" name="qualitydpt" name="qualitydptn" value="No"/>
+	                <label for="qualitydptn">No</label>
+	              </div>
+
+	              <div class="col s2">Departamento investigación (*)</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="investigatedpt" id="investigatedpts" value="Si"/> 
+	                <label for="investigatedpts">Si</label>
+	                <input type="radio" name="investigatedpt" name="investigatedptn" value="No"/>
+	                <label for="investigatedpts">No</label>
+	              </div>
+	            </div>
+
+	            <div class="row">
+	              <div class="col s2">Plan piloto</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="pilotplan" id="pilotplans" value="Si"/> 
+	                <label for="pilotplans">Si</label>
+	                <input type="radio" name="pilotplan" id="pilotplann" value="No"/>
+	                <label for="pilotplann">No</label>
+	              </div>
+
+	              <div class="col s2">Participación comunidad (*)</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="community" id="communitys" value="Si"/> 
+	                <label for="communitys">Si</label>
+	                <input type="radio" name="community" id="communityn" value="No"/>
+	                <label for="communityn">No</label>
+	              </div>
+	            </div>
+
+	            <div class="row">
+	              <div class="col s2">Sica (*)</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="sica" id="sicas" value="Si"/> 
+	                <label for="sicas">Si</label>
+	                <input type="radio" name="sica" id="sican" value="No"/>
+	                <label for="sican">No</label>
+	              </div>
+
+	              <div class="col s2">Sunagro (*)</div>
+
+	              <div class="col s4">
+	                <input type="radio" name="sunagro" id="sunagros" value="Si"/> 
+	                <label for="sunagros">Si</label>
+	                <input type="radio" name="sunagro" id="sunagron" value="No"/>
+	                <label for="sunagron">No</label>
+	              </div>
+	            </div>
+
+	            
+	            <hr>
+	            <div class="row">
+	              <div class="col s12">&nbsp;</div>
+	            </div> 
+
+	            <div class="row">
+					<div class="input-field col s6">
+						<select id="selectedServices" name="selectedServices">
+					    	<option value="" disabled selected>Seleccione los servicios básicos</option>
+							<option>Agua potable</option>
+			                <option>Agua servidas</option>
+			                <option>Telefonía celular</option>
+			                <option>Transporte público</option>
+			                <option>Telefonía fija</option>
+			                <option>Vías asfaltadas</option>
+			                <option>Vías por asfaltar</option>
+			                <option>Internet</option>
+					    </select>
+					    <label for="selectedServices">Servicios básicos</label>
+					 </div>		
+					<div class="input-field col s6">
+						<select id="selectedWater" name="selectedWater">
+					    	<option value="" disabled selected>Seleccione la principal fuente de agua</option>
+		                	<option>Hurto</option>
+		                	<option>Incendio</option>
+		                	<option>Inundación</option>
+		                	<option>Sequía</option>
+	                    </select>
+					    <label for="selectedWater">Principal fuente de agua</label>
 					</div>	
- 					<ul>
-					    <li ng-repeat="todo in selectedTransport">         	            
-							<div class="row">
-					        <span >
-					        	<div class="input-field col s6">
-					                        <input id="transpAmount" type="text" class="validate" required>
-					                        <label for="transpAmount" data-error="Campo requerido" data-success="OK!">Cantidad ({{todo}})</label>
-					            </div>
-					            <div class="input-field col s6">
-					                        <input id="organismup" type="text" class="validate" required>
-					                        <label for="organismup" data-error="Campo requerido" data-success="OK!">Capacidad toneladas ({{todo}})</label>
-					            </div>
+						
+	            </div>
+				<div class="row">
+					<div class="input-field col s6">
+						<select id="selectedVia" name="selectedVia">
+					    	<option value="" disabled selected>Seleccione la vialidad agrícola</option>
+		                	<option>Asfaltada</option>
+	                		<option>Garzón</option>
+	                		<option>Porces de asfalto</option>
+	                		<option>Tierras</option>
+	                		<option>Concreto</option>
+	                		<option>Otro</option>
+	                    </select>
+					    <label for="selectedVia">Vialidad agrícola</label>
+					</div>	
+
+					<div class="input-field col s6">
+						<select id="selectedDestiny" name="selectedDestiny">
+					    	<option value="" disabled selected>Seleccione el destino de la producción</option>
+				            <option>Autoconsumo</option>
+			                <option>Mercado</option>
+			                <option>Intermedio</option>
+			                <option>A puerta de granja</option>
+			                <option>Industria</option>
+			                <option>Otro</option>
+	                    </select>
+					    <label for="selectedDestiny">Destino de la producción</label>
+					</div>	
+	            </div>	
+	            <div class="row">
+					<div class="input-field col s12">
+						<select id="selectedTransport" ng-model="selectedTransport" name="selectedTransport" multiple>
+					    	<option value="" disabled selected>Seleccione el medio de transporte</option>
+							<option>Carro</option>
+		                  	<option>Camioneta</option>
+		                  	<option>Pickup</option>
+		                	<option>Camión</option>
+					    </select>
+					    <label for="selectedTransport">Transporte???</label>
+					</div>	
+				</div>	
+					<ul>
+				    <li ng-repeat="todo in selectedTransport">         	            
+						<div class="row">
+				        <span >
+				        	<div class="input-field col s6">
+				                        <input id="transpAmount" type="text" class="validate" required>
+				                        <label for="transpAmount" data-error="Campo requerido" data-success="OK!">Cantidad ({{todo}})</label>
+				            </div>
+				            <div class="input-field col s6">
+				                        <input id="organismup" type="text" class="validate" required>
+				                        <label for="organismup" data-error="Campo requerido" data-success="OK!">Capacidad toneladas ({{todo}})</label>
+				            </div>
 
 
-					        </span></br>
+				        </span></br>
 
-					</div>
+				</div>
+				</li>
+				</ul>					
+				<div class="row">		            
+					<div class="input-field col s12">
+						<select id="selectedTroubles" ng-model="selectedTroubles" name="selectedTroubles" multiple>
+		                	<option>Hurto</option>
+		                	<option>Incendio</option>
+		                	<option>Inundación</option>
+		                	<option>Sequía</option>
+	                    </select>
+					    <label for="selectedTroubles">Problemas frecuentes</label>
+					</div>	
+	            </div>		   
+	            <ul>
+				    <li ng-repeat="todo in selectedTroubles">         	            
+						<div class="row">
+				        <span >
+				        	<div class="input-field col s6">
+				                        <input id="organismup" type="text" class="validate" required>
+				                        <label for="organismup" data-error="Campo requerido" data-success="OK!">Descripción ({{todo}})</label>
+				            </div>
+
+				        </span></br>
+
+				</div>
+				</li>
+				</ul>
+  
+	            <div class="row">
+	              <div class="col s12">
+	                <span> Tipo de sector: &nbsp;
+	                    <input type="checkbox" name="sectorVegetal" id="sectorVegetal" value="vegetal" ng-model="sectorVegetal" ng-click="vegetalSelected();"/>
+	                    <label for="sectorVegetal">Vegetal</label>&nbsp;&nbsp;&nbsp;
+	                    <input type="checkbox" name="sectorPecuario" id="sectorPecuario"value="pecuario" ng-model="sectorPecuario" ng-click="pecuarioSelected();"/><label for="sectorPecuario">Pecuario</label>&nbsp;&nbsp;&nbsp;
+	                    <input type="checkbox" name="sectorAgroIndustria" id="sectorAgroIndustria" value="agroIndustria" ng-model="sectorAgroIndustria" ng-click="agroIndustriaSelected();"/>
+	                    <label for="sectorAgroIndustria">Agroindustria</label>
+	                 </span>
+	              </div>
+	            </div> 
+	            <!--Inicio sector vegetal--> 
+	            <div ng-show="vegetalBlock">                  
+	              <div class="row">
+					<div class="input-field col s6">
+						<select id="selectedIrrigation" name="selectedIrrigation" multiple>
+					    	<option value="" disabled selected>Seleccione el método de riego</option>
+							<option>Aspersión</option>
+		                    <option>Bombeo mecánico</option>
+		                    <option>Goteo</option>
+		                    <option>Gravedad</option>
+		                    <option>Microaspersión</option>
+		                    <option>No posee</option>
+					    </select>
+					    <label for="selectedTransport">Método de riego</label>
+					</div>	
+
+	                <div class="input-field col s6">
+                    <input id="irrigationCapacity" type="text" class="validate" required>
+                    <label for="irrigationCapacity" data-error="Campo requerido" data-success="OK!">Capacidad de riego(Hect)</label>
+                    </div>
+	              </div>
+
+	              <div class="row">
+	                <div class="col s2">Tipo de ambiente</div>
+
+	                  <div class="col s4">
+	                    <input type="radio" name="environmentType" id="environmentTypep" name="environmentType"alue="protected"/> 
+	                    <label for="environmentTypep">Cultivo protegido</label>
+	                    <input type="radio" name="environmentType" id="environmentTypenp" value="unprotected"/>
+	                    <label for="environmentTypenp">Cielo abierto</label>
+	                  </div>
+	 
+	                  <div class="col s2">Ciclo</div>
+
+	                  <div class="col s4">
+	                    <input type="radio" name="cycle" id="cyclec" value="short" ng-model="cycle" ng-change="cycleSelected();"/> 
+	                    <label for="cyclec">Corto</label>
+	                    <input type="radio" name="cycle" id="cycles" value="semishort" ng-model="cycle" ng-change="cycleSelected();">
+	                    <label for="cycles">SemiPermanente</label>
+	                    <input type="radio" name="cycle" id="cyclep" value="long" ng-model="cycle" ng-change="cycleSelected();">
+	                    <label cyclep>Permanente</label>                          
+	                  </div>
+	              </div>
+	              <br/><hr>
+	              <!--Bloques de ciclos cortos-->  
+	              <div ng-show="vegetalShortCycle">
+	                <div class="row">
+	                  <div class="col s2">Nombre</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="shortNameCultivation" name="shortNameCultivation" placeholder="Nombre de cultivo">    
+	                  </div>
+
+	                  <div class="col s2">Superficie Hect</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="shortSurface" name="shortSurface" placeholder="Superficie en hectáreas">
+	                  </div>
+	                </div>
+
+	                <div class="row">
+	                  <div class="col s2">Producción últ cosecha</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="lastProductionHarvest" name="lastProductionHarvest" placeholder="Producción última cosecha">    
+	                  </div>
+
+	                  <div class="col s2">Año últ. cosecha</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="lastYearHarvest" name="lastYearHarvest" placeholder="Año última cosecha">
+	                  </div>
+	                </div>                      
+
+	                <div class="row">
+	                  <div class="col s2">Mes y año de siembra</div>
+
+	                  <div class="col s4">
+	                    <select>
+	                    <option>1</option>
+	                    <option>2</option>
+	                    <option>3</option>
+	                    <option>4</option>
+	                    <option>5</option>
+	                    <option>6</option>
+	                    <option>7</option>
+	                    <option>8</option>
+	                    <option>9</option>
+	                    <option>10</option>
+	                    <option>11</option>
+	                    <option>12</option>
+	                    </select>
+	                    <input type="text" id="plantYear" name="plantYear" placeholder="Año siembra">    
+	                  </div>
+
+	                  <div class="col s2">Tipo</div>
+
+	                  <div class="col s4">
+	                    <input type="radio" name="shortPermanentType" id="shortPermanentTypei" value="short"/> 
+	                    <label for="shortPermanentTypei">Intención de siembra</label>
+	                    <input type="radio" name="shortPermanentType" id="shortPermanentTypes" value="semishort"/>
+	                    <label for="shortPermanentTypes">Sembrado</label>
+	                  </div>
+	                </div>                      
+	              </div>
+
+	              <!--Ciclo semipermanente/permanente-->
+	              <div ng-show="vegetalLongCycle">
+	                <div class="row">
+	                  <div class="col s2">Nombre</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="longCultivationName" name="longCultivationName" placeholder="Nombre del cultivo">    
+	                  </div>
+
+	                  <div class="col s2">Superficie Hect</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="longSurface" name="longSurface" placeholder="Superficie en hectáreas">
+	                  </div>
+	                </div>
+
+	                <div>
+	                  <div class="col s2">Año de fundación</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="longFoundationYear" name="longFoundationYear" placeholder="Año de Fundación">    
+	                  </div>
+
+	                  <div class="col s2">Año de renovación</div>
+
+	                  <div class="col s4">
+	                    <input type="text" id="longRenewalYear" name="longRenewalYear" placeholder="Año renovación">
+	                  </div>
+	                </div>                      
+
+	                <div class="row">
+	                  <div class="col s2">Tipo</div>
+
+	                  <div class="col s4">
+	                    <input type="radio" name="longPermanentType" id="longPermanentTypei" value="intended"/> 
+	                    <label for="longPermanentTypei">Intención de siembra</label>
+	                    <input type="radio" name="longPermanentType" id="longPermanentTypep" value="plant"/>
+	                    <label for="longPermanentTypep">Plantados</label>
+	                  </div>
+
+	                  <div class="col s6">&nbsp; </div>
+	                </div>                      
+	              </div> <!--End VegetalLongCycle-->
+	            </div>  <!--Fin sector vegetal-->
+
+    <!--Inicio sector pecuario--> 
+    <div ng-show="pecuarioBlock">
+    	<div class="row">
+    		<div class="col s12">Sector pecuario</div>
+    		<div class="col s12">
+    			<span> Tipo de Subsector: 
+    				<input type="checkbox" name="subsectorRumiante" id="subsectorRumiante" value="rumiante" ng-model="subsectorRumiante" ng-click="rumianteSelected();"/>
+    				<label for="subsectorRumiante">Rumiante</label>
+
+    				<input type="checkbox" name="subsectorPorcino" id="subsectorPorcino" value="porcino" ng-model="subsectorPorcino" ng-click="porcinoSelected();"/><label for="subsectorPorcino">Porcino</label>
+
+    				<input type="checkbox" name="subsectorAvicola" id="subsectorAvicola" value="avicola" ng-model="subsectorAvicola" ng-click="avicolaSelected();"/>
+    				<label for="subsectorAvicola">Avicola</label>
+
+    				<input type="checkbox" name="subsectorApicola" id="subsectorApicola" value="apicola" ng-model="subsectorApicola" ng-click="apicolaSelected();"/>
+    				<label for="subsectorApicola">Apicola</label>
+
+    				<input type="checkbox" name="subsectorCunicola" id="subsectorCunicola" value="cunicola" ng-model="subsectorCunicola" ng-click="cunicolaSelected();"/>
+    				<label for="subsectorCunicola">Cunicola</label>
+    			</span>
+    		</div>
+    	</div>
+    	<!--inicio subsectores del sector pecuario-->      
+    	<div ng-show="subsectorRumiante">
+    		<div class="row"> 
+    			<div class="col s12">Existencia en numero de cabezas(el día del registro)</div>
+    			<span> Rubro: 
+    				<input type="checkbox" name="bovino" id="bovino" value="bovino" ng-model="bovino" ng-click="bovinoSelected();"/>
+    				<label for="bovino">Bovino</label>
+
+    				<input type="checkbox" name="bufalino" id="bufalino" value="bufalino" ng-model="bufalino" ng-click="bufalinoSelected();"/><label for="bufalino">Bufalino</label>
+
+    				<input type="checkbox" name="caprino" id="caprino" value="caprino" ng-model="caprino" ng-click="caprinoSelected();"/>
+    				<label for="caprino">Caprino</label>
+
+    				<input type="checkbox" name="ovino" id="ovino" value="ovino" ng-model="ovino" ng-click="ovinoSelected();"/>
+    				<label for="ovino">Ovino</label>
+    			</span>
+    		</div>
+
+    		<!--inicio bloque bovino--> 
+    		<div ng-show="bovino">
+    			<div class="row">
+    				<div class="input-field col s6">
+    					<select id="selectedAgeclass" name="selectedAgeclass" ng-model="selectedAgeclass" multiple>
+    						<option value="" disabled selected>Seleccione Clase etaria</option>
+    						<option>Vacas</option>
+    						<option>Novillas</option>
+    						<option>Mautes</option>
+    						<option>Becerras</option>
+    						<option>Toros</option>
+    						<option>Toretes</option>
+    						<option>Novillos</option>
+    						<option>Mautas</option>
+    						<option>Becerros</option>
+    					</select>
+    					<label for="selectedAgeclass">Clase etaria</label>
+    				</div>	
+    				<ul>
+    					<li ng-repeat="todo in selectedAgeclass">         	            
+
+    						<span >
+    							<div class="input-field col s6">
+    								<input id="AgeclassgU" type="text" class="validate" required>
+    								<label for="AgeclassU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+    							</div>
+    						</span>
+
+    					</li>
+    				</ul>
+    			</div>
+
+    			<div class="row">
+    				<div class="col s1">Sexo:</div>
+    				<div class="col s1">
+    					<ul>
+    						<li>
+    							<input type="checkbox" name="hembra" id="hembra" value="hembra" ng-model="hembra" ng-click="hembraSelected();"/>
+    							<label for="hembra">hembra</label>
+    						</li>
+    						<li>
+
+    							<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
+    						</li>
+    					</ul>
+    				</div>
+    			</div>
+    			<div ng-show="hembra">
+    				<div class="row">
+    					<div class="col s2">Modo de ordeño:</div>
+    					<div class="col s1">Con crias
+    						<input type="radio" name="concrias" id="concriassi" value="Si"/> 
+    						<label for="concriassi">Si</label>
+    						<input type="radio" name="concrias" id="concriasno" value="No"/>
+    						<label for="concriasno">No</label>
+    					</div>
+    					<div class="col s1">Sin crias
+    						<input type="radio" name="sincrias" id="sincriassi" value="Si"/> 
+    						<label for="sincriassi">Si</label>
+    						<input type="radio" name="sincrias" id="sincriasno" value="No"/>
+    						<label for="sincriasno">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Ambas" id="Ambassi" value="Si"/> 
+    						<label for="Ambassi">Si</label>
+    						<input type="radio" name="Ambas" id="Ambasno" value="No"/>
+    						<label for="Ambasno">No</label>
+    					</div>
+    				<div class="row">
+    					<div class="col s2">Tipo de ordeño:</div>
+    					<div class="col s1">Manual
+    						<input type="radio" name="Manual" id="Manualsi" value="Si"/> 
+    						<label for="Manualsi">Si</label>
+    						<input type="radio" name="Manual" id="Manualno" value="No"/>
+    						<label for="Manualno">No</label>
+    					</div>
+    					<div class="col s1">Mecanico
+    						<input type="radio" name="Mecanico" id="Mecanicosi" value="Si"/> 
+    						<label for="Mecanicosi">Si</label>
+    						<input type="radio" name="Mecanico" id="Mecanicono" value="No"/>
+    						<label for="Mecanicono">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Amba" id="Ambasi" value="Si"/> 
+    						<label for="Ambasi">Si</label>
+    						<input type="radio" name="Amba" id="Ambano" value="No"/>
+    						<label for="Ambano">No</label>
+    					</div>
+    				</div>
+    				</div>
+    			</div>
+    		</div>
+    		<!--fin de bovino-->
+    		<!--inicio bloque bufalino-->        
+    		<div ng-show="bufalino">
+    			<div class="row">
+    				<div class="input-field col s6">
+    					<select id="selectedAgeclass" name="selectedAgeclass" ng-model="selectedAgeclass" multiple>
+    						<option value="" disabled selected>Seleccione Clase etaria</option>
+    						<option>Bufalas</option>
+    						<option>Buvillas</option>
+    						<option>Bumautas</option>
+    						<option>Bucerras</option>
+    						<option>Bufalo</option>
+    						<option>Bumautes</option>
+    						<option>Bucerro</option>
+    					</select>
+    					<label for="selectedAgeclass">Clase etaria</label>
+    				</div>	
+    				<ul>
+    					<li ng-repeat="todo in selectedAgeclass">         	            
+
+    						<span >
+    							<div class="input-field col s6">
+    								<input id="AgeclassgU" type="text" class="validate" required>
+    								<label for="AgeclassU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+    							</div>
+    						</span>
+
+    					</li>
+    				</ul>
+    			</div>
+    			<div class="row">
+    				<div class="col s1">Sexo:</div>
+    				<div class="col s1">
+    					<ul>
+    						<li>
+    							<input type="checkbox" name="hembra" id="hembra" value="hembra" ng-model="hembra" ng-click="hembraSelected();"/>
+    							<label for="hembra">hembra</label>
+    						</li>
+    						<li>
+
+    							<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
+    						</li>
+    					</ul>
+    				</div>
+    			</div>
+				<div ng-show="hembra">
+    				<div class="row">
+    					<div class="col s2">Modo de ordeño:</div>
+    					<div class="col s1">Con crias
+    						<input type="radio" name="concrias" id="concriassi" value="Si"/> 
+    						<label for="concriassi">Si</label>
+    						<input type="radio" name="concrias" id="concriasno" value="No"/>
+    						<label for="concriasno">No</label>
+    					</div>
+    					<div class="col s1">Sin crias
+    						<input type="radio" name="sincrias" id="sincriassi" value="Si"/> 
+    						<label for="sincriassi">Si</label>
+    						<input type="radio" name="sincrias" id="sincriasno" value="No"/>
+    						<label for="sincriasno">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Ambas" id="Ambassi" value="Si"/> 
+    						<label for="Ambassi">Si</label>
+    						<input type="radio" name="Ambas" id="Ambasno" value="No"/>
+    						<label for="Ambasno">No</label>
+    					</div>
+    				<div class="row">
+    					<div class="col s2">Tipo de ordeño:</div>
+    					<div class="col s1">Manual
+    						<input type="radio" name="Manual" id="Manualsi" value="Si"/> 
+    						<label for="Manualsi">Si</label>
+    						<input type="radio" name="Manual" id="Manualno" value="No"/>
+    						<label for="Manualno">No</label>
+    					</div>
+    					<div class="col s1">Mecanico
+    						<input type="radio" name="Mecanico" id="Mecanicosi" value="Si"/> 
+    						<label for="Mecanicosi">Si</label>
+    						<input type="radio" name="Mecanico" id="Mecanicono" value="No"/>
+    						<label for="Mecanicono">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Amba" id="Ambasi" value="Si"/> 
+    						<label for="Ambasi">Si</label>
+    						<input type="radio" name="Amba" id="Ambano" value="No"/>
+    						<label for="Ambano">No</label>
+    					</div>
+    				</div>
+    				</div>
+    			</div>
+    		</div>
+    	<!--fin del bloque bufalino-->     
+    	<!--inicio bloque caprino-->        
+    	<div ng-show="caprino">
+    		<div class="row">
+    			<div class="input-field col s6">
+    				<select id="selectedAgeclass" name="selectedAgeclass" ng-model="selectedAgeclass" multiple>
+    					<option value="" disabled selected>Seleccione Clase etaria</option>
+    					<option>Macho cabrio</option>
+    					<option>Cabras</option>
+    					<option>Cabritonas</option>
+    					<option>Cabritas</option>
+    					<option>Cabritones</option>
+    					<option>Cabritos</option>   
+    				</select>
+    				<label for="selectedAgeclass">Clase etaria</label>
+    			</div>	
+    			<ul>
+    				<li ng-repeat="todo in selectedAgeclass">         	            
+
+    					<span >
+    						<div class="input-field col s6">
+    							<input id="AgeclassgU" type="text" class="validate" required>
+    							<label for="AgeclassU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+    						</div>
+    					</span>
+
+    				</li>
+    			</ul>
+    		</div>
+    		<div class="row">
+    			<div class="col s1">Sexo:</div>
+    			<div class="col s1">
+    				<ul>
+    					<li>
+    						<input type="checkbox" name="hembra" id="hembra" value="hembra" ng-model="hembra" ng-click="hembraSelected();"/>
+    						<label for="hembra">hembra</label>
+    					</li>
+    					<li>
+
+    						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
+    					</li>
+    				</ul>
+    			</div>
+    		</div>
+    		<div ng-show="hembra">
+    				<div class="row">
+    					<div class="col s2">Modo de ordeño:</div>
+    					<div class="col s1">Con crias
+    						<input type="radio" name="concrias" id="concriassi" value="Si"/> 
+    						<label for="concriassi">Si</label>
+    						<input type="radio" name="concrias" id="concriasno" value="No"/>
+    						<label for="concriasno">No</label>
+    					</div>
+    					<div class="col s1">Sin crias
+    						<input type="radio" name="sincrias" id="sincriassi" value="Si"/> 
+    						<label for="sincriassi">Si</label>
+    						<input type="radio" name="sincrias" id="sincriasno" value="No"/>
+    						<label for="sincriasno">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Ambas" id="Ambassi" value="Si"/> 
+    						<label for="Ambassi">Si</label>
+    						<input type="radio" name="Ambas" id="Ambasno" value="No"/>
+    						<label for="Ambasno">No</label>
+    					</div>
+    				<div class="row">
+    					<div class="col s2">Tipo de ordeño:</div>
+    					<div class="col s1">Manual
+    						<input type="radio" name="Manual" id="Manualsi" value="Si"/> 
+    						<label for="Manualsi">Si</label>
+    						<input type="radio" name="Manual" id="Manualno" value="No"/>
+    						<label for="Manualno">No</label>
+    					</div>
+    					<div class="col s1">Mecanico
+    						<input type="radio" name="Mecanico" id="Mecanicosi" value="Si"/> 
+    						<label for="Mecanicosi">Si</label>
+    						<input type="radio" name="Mecanico" id="Mecanicono" value="No"/>
+    						<label for="Mecanicono">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Amba" id="Ambasi" value="Si"/> 
+    						<label for="Ambasi">Si</label>
+    						<input type="radio" name="Amba" id="Ambano" value="No"/>
+    						<label for="Ambano">No</label>
+    					</div>
+    				</div>
+    				</div>
+    			</div>
+    	</div>
+
+    	<!--fin del bloque caprino--> 
+    	<!--inicio bloque ovino-->        
+    	<div ng-show="ovino">
+    		<div class="row">
+    			<div class="input-field col s6">
+    				<select id="selectedAgeclass" name="selectedAgeclass" ng-model="selectedAgeclass" multiple>
+    					<option value="" disabled selected>Seleccione Clase etaria</option>
+    					<option>Borrego</option>
+    					<option>Oveja</option>
+    					<option>Cordera</option>
+    					<option>Corderita</option>
+    					<option>Cordero</option>
+    					<option>Corderito</option>
+    				</select>
+    				<label for="selectedAgeclass">Clase etaria</label>
+    			</div>	
+    			<ul>
+    				<li ng-repeat="todo in selectedAgeclass">         	            
+
+    					<span >
+    						<div class="input-field col s6">
+    							<input id="AgeclassgU" type="text" class="validate" required>
+    							<label for="AgeclassU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+    						</div>
+    					</span>
+
+    				</li>
+    			</ul>
+    		</div>
+    		<div class="row">
+    			<div class="col s1">Sexo:</div>
+    			<div class="col s1">
+    				<ul>
+    					<li>
+    						<input type="checkbox" name="hembra" id="hembra" value="hembra" ng-model="hembra" ng-click="hembraSelected();"/>
+    						<label for="hembra">hembra</label>
+    					</li>
+    					<li>
+
+    						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
+    					</li>
+    				</ul>
+    			</div>
+    		</div>
+    		<div ng-show="hembra">
+    				<div class="row">
+    					<div class="col s2">Modo de ordeño:</div>
+    					<div class="col s1">Con crias
+    						<input type="radio" name="concrias" id="concriassi" value="Si"/> 
+    						<label for="concriassi">Si</label>
+    						<input type="radio" name="concrias" id="concriasno" value="No"/>
+    						<label for="concriasno">No</label>
+    					</div>
+    					<div class="col s1">Sin crias
+    						<input type="radio" name="sincrias" id="sincriassi" value="Si"/> 
+    						<label for="sincriassi">Si</label>
+    						<input type="radio" name="sincrias" id="sincriasno" value="No"/>
+    						<label for="sincriasno">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Ambas" id="Ambassi" value="Si"/> 
+    						<label for="Ambassi">Si</label>
+    						<input type="radio" name="Ambas" id="Ambasno" value="No"/>
+    						<label for="Ambasno">No</label>
+    					</div>
+    				<div class="row">
+    					<div class="col s2">Tipo de ordeño:</div>
+    					<div class="col s1">Manual
+    						<input type="radio" name="Manual" id="Manualsi" value="Si"/> 
+    						<label for="Manualsi">Si</label>
+    						<input type="radio" name="Manual" id="Manualno" value="No"/>
+    						<label for="Manualno">No</label>
+    					</div>
+    					<div class="col s1">Mecanico
+    						<input type="radio" name="Mecanico" id="Mecanicosi" value="Si"/> 
+    						<label for="Mecanicosi">Si</label>
+    						<input type="radio" name="Mecanico" id="Mecanicono" value="No"/>
+    						<label for="Mecanicono">No</label>
+    					</div>
+    					<div class="col s1">Ambas
+    						<input type="radio" name="Amba" id="Ambasi" value="Si"/> 
+    						<label for="Ambasi">Si</label>
+    						<input type="radio" name="Amba" id="Ambano" value="No"/>
+    						<label for="Ambano">No</label>
+    					</div>
+    				</div>
+    				</div>
+    			</div>
+    	</div>
+    	<!--fin del bloque ovino--> 
+    	<div class="row">
+    		<div class="col s2">Manejo de producción</div>
+    		
+    		<div class="col s1">Leche especializada
+    			<input type="radio" name="Leche especializada" id="Leche especializadasi" value="Si"/> 
+    			<label for="Leche especializadasi">Si</label>
+    			<input type="radio" name="Leche especializada" id="Leche especializadano" value="No"/>
+    			<label for="Leche especializadano">No</label>
+    		</div>
+    		<div class="col s1">Carne especializada
+    			<input type="radio" name="Carne especializada" id="Carne especializadasi" value="Si"/> 
+    			<label for="Carne especializadasi">Si</label>
+    			<input type="radio" name="Carne especializada" id="Carne especializadano" value="No"/>
+    			<label for="Carne especializadano">No</label>
+    		</div>
+    		<div class="col s1">Doble proposito leche-carne
+    			<input type="radio" name="doble" id="doblesi" value="Si"/> 
+    			<label for="doblesi">Si</label>
+    			<input type="radio" name="doble" id="dobleno" value="No"/>
+    			<label for="dobleno">No</label>
+    		</div>
+    		<div class="col s1">Doble proposito leche-carne
+    			<input type="radio" name="dobles" id="doblessi" value="Si"/> 
+    			<label for="doblessi">Si</label>
+    			<input type="radio" name="dobles" id="doblesno" value="No"/>
+    			<label for="doblesno">No</label>
+    		</div>
+    		<div class="col s1">Recria
+    			<input type="radio" name="Recria" id="Recriasi" value="Si"/> 
+    			<label for="Recriasi">Si</label>
+    			<input type="radio" name="Recria" id="Recriano" value="No"/>
+    			<label for="Recriano">No</label>
+    		</div>
+    		<div class="col s1">Centro genético
+    			<input type="radio" name="Centro genético" id="Centro genéticosi" value="Si"/> 
+    			<label for="Centro genéticosi">Si</label>
+    			<input type="radio" name="Centro genético" id="Centro genéticono" value="No"/>
+    			<label for="Centro genéticono">No</label>
+    		</div>
+    		<div class="col s1">Trabajo
+    			<input type="radio" name="Trabajo" id="Trabajosi" value="Si"/> 
+    			<label for="Trabajosi">Si</label>
+    			<input type="radio" name="Trabajo" id="Trabajono" value="No"/>
+    			<label for="Trabajono">No</label>
+    		</div>
+    		<div class="col s1">Lidia
+    			<input type="radio" name="Lidia" id="Lidiasi" value="Si"/> 
+    			<label for="Lidiasi">Si</label>
+    			<input type="radio" name="Lidia" id="Lidiano" value="No"/>
+    			<label for="Lidiano">No</label>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s2">Modalidad de producción</div>
+    		<div class="col s4">
+    			<select ng-model="selectedIrrigation" multiple>
+    				<option>Cria Vaca-becerro</option>
+    				<option>Cria Bufala-bucerro</option>
+    				<option>Cria Cabra-cabrito</option>
+    				<option>Cria Oveja-corderito</option>
+    				<option>Cria Vaca-maute</option>
+    				<option>Cria Bufala-bumaute</option>
+    				<option>Cria Cabra-cabriton</option>
+    				<option>Cria Oveja-cordero</option>
+    				<option>Cria Vaca-novillo</option>
+    				<option>Cria Bufala-buvillo</option>
+    				<option>Levante</option>
+    				<option>Ceba</option>
+    			</select>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s2">Comercialización</div>
+    		<div class="col s4">
+    			<select ng-model="selectedIrrigation" multiple>
+    				<option>Matadero</option>
+    				<option>A puerta de granja</option>
+    				<option>Mercado</option>
+    				<option>Reproductores</option>
+    				<option>Sector agroindustrial</option>
+    				<option>Mayorista</option>
+    			</select>
+    		</div>
+    	</div>
+    	 	<div class="row">
+    		<div class="col s2">Plan sanitario</div>
+    		
+    		<div class="col s1">Rabia
+    			<input type="radio" name="Rabia" id="Rabiasi" value="Si"/> 
+    			<label for="Rabiasi">Si</label>
+    			<input type="radio" name="Rabia" id="Rabiano" value="No"/>
+    			<label for="Rabiano">No</label>
+    		</div>
+    		<div class="col s1">Fiebre aftosa
+    			<input type="radio" name="Fiebre aftosa" id="Fiebre aftosasi" value="Si"/> 
+    			<label for="Fiebre aftosasi">Si</label>
+    			<input type="radio" name="Fiebre aftosa" id="Fiebre aftosano" value="No"/>
+    			<label for="Fiebre aftosano">No</label>
+    		</div>
+    		<div class="col s1">Carbón sintomático
+    			<input type="radio" name="Carbón sintomático" id="Carbón sintomáticosi" value="Si"/> 
+    			<label for="Carbón sintomáticosi">Si</label>
+    			<input type="radio" name="Carbón sintomático" id="Carbón sintomáticono" value="No"/>
+    			<label for="Carbón sintomáticono">No</label>
+    		</div>
+    		<div class="col s1">Edemamaligno
+    			<input type="radio" name="Edemamaligno" id="Edemamalignosi" value="Si"/> 
+    			<label for="Edemamalignosi">Si</label>
+    			<input type="radio" name="Edemamaligno" id="Edemamalignono" value="No"/>
+    			<label for="Edemamalignono">No</label>
+    		</div>
+    		<div class="col s1">Septicemia hemorrágica
+    			<input type="radio" name="Septicemia" id="Septicemiasi" value="Si"/> 
+    			<label for="Septicemiasi">Si</label>
+    			<input type="radio" name="Septicemia" id="Septicemiano" value="No"/>
+    			<label for="Septicemiano">No</label>
+    		</div>
+    		<div class="col s1">Carbón bacteridiano
+    			<input type="radio" name="Carbón" id="Carbónsi" value="Si"/> 
+    			<label for="Carbónsi">Si</label>
+    			<input type="radio" name="Carbón" id="Carbónno" value="No"/>
+    			<label for="Carbónno">No</label>
+    		</div>
+    		<div class="col s1">Brucelosis
+    			<input type="radio" name="Brucelosis" id="Brucelosissi" value="Si"/> 
+    			<label for="Brucelosissi">Si</label>
+    			<input type="radio" name="Brucelosis" id="Brucelosisno" value="No"/>
+    			<label for="Brucelosisno">No</label>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col s2">TRÁMITES O PERMISOS</div>
+    		<div class="col s4">
+    			<select ng-model="selectedIrrigation" multiple>
+    				<option>Certificado de Sacrificio de hembras Bovinas y/o Bufalinas</option>
+    				<option>Inspección de Carga Fito y Zoosanitaria</option>
+    				<option>Permiso Sanitario de importación de Plaguicidas ( otorgada por INSAI )</option>
+    				<option>Permiso Sanitario o aval de vacunación emitido por el INSAI (Instituto Nacional de Salud Agrícola Integral)</option>
+    				<option>Permisos de Insumos Agrícolas ( otorgada por INSAI )</option>
+    				<option>Permisos de servicios Pecuarios ( otorgada por INSAI )</option>
+    				<option>Permisos Fitosanitario de importación ( otorgada por INSAI )</option>
+    				<option>Permiso Sanitario de importación de Plaguicidas</option>
+    				<option>Beneficiario de financiamiento </option>
+    				<option>Beneficiario de financiamiento </option>
+    				<option>Cosecha arrimada en  Silo</option>
+    				<option>Historial de insumos adquiridos</option>
+    				<option>Beneficiario de financiamiento </option>
+    				<option>Beneficiario de asesoramiento técnico</option>
+
+    			</select>
+    		</div>
+    	<div class="row">
+    		<div class="col s2">Sistema de producción</div>
+    		<div class="col s4">
+    			<select ng-model="selectedIrrigation" multiple>
+    				<option>Extensivo</option>
+    				<option>Intensivo</option>
+    				<option>Semiextensivo</option>
+    			</select>
+    		</div>
+    	</div>
+    	</div>
+    	  <div class="row">
+			<div class="input-field col s6">
+				<select id="selectedCapacity" name="selectedCapacity" ng-model="selectedCapacity" multiple>
+		    	<option value="" disabled selected>Seleccione Capacidad</option>
+              	<option>Instalada</option>
+				<option>Operativa</option>
+		    </select>
+		    <label for="selectedCapacity">Capacidad</label>
+			</div>	
+			<ul>
+				<li ng-repeat="todo in selectedCapacity">       	            
+					<div class="row">
+						<span >
+							<div class="input-field col s6">
+								 <input id="CapacityU" type="text" class="validate" required>
+      	                     <label for="CapacityU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+							</div>
+						</span>		              			
 					</li>
-					</ul>					
-					<div class="row">		            
-						<div class="input-field col s12">
-							<select id="selectedTroubles" ng-model="selectedTroubles" name="selectedTroubles" multiple>
-			                	<option>Hurto</option>
-			                	<option>Incendio</option>
-			                	<option>Inundación</option>
-			                	<option>Sequía</option>
-		                    </select>
-						    <label for="selectedTroubles">Problemas frecuentes</label>
-						</div>	
-		            </div>		   
-		            <ul>
-					    <li ng-repeat="todo in selectedTroubles">         	            
-							<div class="row">
-					        <span >
-					        	<div class="input-field col s6">
-					                        <input id="organismup" type="text" class="validate" required>
-					                        <label for="organismup" data-error="Campo requerido" data-success="OK!">Descripción ({{todo}})</label>
-					            </div>
+				</ul>
+			</div>
 
-					        </span></br>
+    	  <div class="row">
+			<div class="input-field col s6">
+				<select id="selectedBuilding" name="selectedBuilding" ng-model="selectedBuilding" multiple>
+		    	<option value="" disabled selected>Seleccione las Instalaciones y/o Equipamientos</option>
+              	<option>Vivienda Principal</option>
+				<option>Vivienda para Obreros</option>
+				<option>Taller</option>
+				<option>Area administrativa</option>
+				<option>Laboratorio</option>
+				<option>Depósitos</option>
+				<option>Galpon de Almacenamiento de alimentos</option>
+				<option>Galpon de Almacenamiento de Herramientas, equipos y Maquinarias</option>
 
-					</div>
+		    </select>
+		    <label for="selectedMachine">Instalación y Equipamiento</label>
+			</div>	
+			<ul>
+				<li ng-repeat="todo in selectedBuilding">       	            
+					<div class="row">
+						<span >
+							<div class="input-field col s6">
+								 <input id="BuildingU" type="text" class="validate" required>
+      	                     <label for="BuildingU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+							</div>
+						</span>		              			
 					</li>
-					</ul>
-      
-		            <div class="row">
-		              <div class="col s12">
-		                <span> Tipo de sector: &nbsp;
-		                    <input type="checkbox" name="sectorVegetal" id="sectorVegetal" value="vegetal" ng-model="sectorVegetal" ng-click="vegetalSelected();"/>
-		                    <label for="sectorVegetal">Vegetal</label>&nbsp;&nbsp;&nbsp;
-		                    <input type="checkbox" name="sectorPecuario" id="sectorPecuario"value="pecuario" ng-model="sectorPecuario" ng-click="pecuarioSelected();"/><label for="sectorPecuario">Pecuario</label>&nbsp;&nbsp;&nbsp;
-		                    <input type="checkbox" name="sectorAgroIndustria" id="sectorAgroIndustria" value="agroIndustria" ng-model="sectorAgroIndustria" ng-click="agroIndustriaSelected();"/>
-		                    <label for="sectorAgroIndustria">Agroindustria</label>
-		                 </span>
-		              </div>
-		            </div> 
-		            <!--Inicio sector vegetal--> 
-		            <div ng-show="vegetalBlock">                  
-		              <div class="row">
-						<div class="input-field col s6">
-							<select id="selectedIrrigation" name="selectedIrrigation" multiple>
-						    	<option value="" disabled selected>Seleccione el método de riego</option>
-								<option>Aspersión</option>
-			                    <option>Bombeo mecánico</option>
-			                    <option>Goteo</option>
-			                    <option>Gravedad</option>
-			                    <option>Microaspersión</option>
-			                    <option>No posee</option>
-						    </select>
-						    <label for="selectedTransport">Método de riego</label>
-						</div>	
-
-		                <div class="input-field col s6">
-                        <input id="irrigationCapacity" type="text" class="validate" required>
-                        <label for="irrigationCapacity" data-error="Campo requerido" data-success="OK!">Capacidad de riego(Hect)</label>
-                        </div>
-		              </div>
-
-		              <div class="row">
-		                <div class="col s2">Tipo de ambiente</div>
-
-		                  <div class="col s4">
-		                    <input type="radio" name="environmentType" id="environmentTypep" name="environmentType"alue="protected"/> 
-		                    <label for="environmentTypep">Cultivo protegido</label>
-		                    <input type="radio" name="environmentType" id="environmentTypenp" value="unprotected"/>
-		                    <label for="environmentTypenp">Cielo abierto</label>
-		                  </div>
-		 
-		                  <div class="col s2">Ciclo</div>
-
-		                  <div class="col s4">
-		                    <input type="radio" name="cycle" id="cyclec" value="short" ng-model="cycle" ng-change="cycleSelected();"/> 
-		                    <label for="cyclec">Corto</label>
-		                    <input type="radio" name="cycle" id="cycles" value="semishort" ng-model="cycle" ng-change="cycleSelected();">
-		                    <label for="cycles">SemiPermanente</label>
-		                    <input type="radio" name="cycle" id="cyclep" value="long" ng-model="cycle" ng-change="cycleSelected();">
-		                    <label cyclep>Permanente</label>                          
-		                  </div>
-		              </div>
-		              <br/><hr>
-		              <!--Bloques de ciclos cortos-->  
-		              <div ng-show="vegetalShortCycle">
-		                <div class="row">
-		                  <div class="col s2">Nombre</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="shortNameCultivation" name="shortNameCultivation" placeholder="Nombre de cultivo">    
-		                  </div>
-
-		                  <div class="col s2">Superficie Hect</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="shortSurface" name="shortSurface" placeholder="Superficie en hectáreas">
-		                  </div>
-		                </div>
-
-		                <div class="row">
-		                  <div class="col s2">Producción últ cosecha</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="lastProductionHarvest" name="lastProductionHarvest" placeholder="Producción última cosecha">    
-		                  </div>
-
-		                  <div class="col s2">Año últ. cosecha</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="lastYearHarvest" name="lastYearHarvest" placeholder="Año última cosecha">
-		                  </div>
-		                </div>                      
-
-		                <div class="row">
-		                  <div class="col s2">Mes y año de siembra</div>
-
-		                  <div class="col s4">
-		                    <select>
-		                    <option>1</option>
-		                    <option>2</option>
-		                    <option>3</option>
-		                    <option>4</option>
-		                    <option>5</option>
-		                    <option>6</option>
-		                    <option>7</option>
-		                    <option>8</option>
-		                    <option>9</option>
-		                    <option>10</option>
-		                    <option>11</option>
-		                    <option>12</option>
-		                    </select>
-		                    <input type="text" id="plantYear" name="plantYear" placeholder="Año siembra">    
-		                  </div>
-
-		                  <div class="col s2">Tipo</div>
-
-		                  <div class="col s4">
-		                    <input type="radio" name="shortPermanentType" id="shortPermanentTypei" value="short"/> 
-		                    <label for="shortPermanentTypei">Intención de siembra</label>
-		                    <input type="radio" name="shortPermanentType" id="shortPermanentTypes" value="semishort"/>
-		                    <label for="shortPermanentTypes">Sembrado</label>
-		                  </div>
-		                </div>                      
-		              </div>
-
-		              <!--Ciclo semipermanente/permanente-->
-		              <div ng-show="vegetalLongCycle">
-		                <div class="row">
-		                  <div class="col s2">Nombre</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="longCultivationName" name="longCultivationName" placeholder="Nombre del cultivo">    
-		                  </div>
-
-		                  <div class="col s2">Superficie Hect</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="longSurface" name="longSurface" placeholder="Superficie en hectáreas">
-		                  </div>
-		                </div>
-
-		                <div>
-		                  <div class="col s2">Año de fundación</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="longFoundationYear" name="longFoundationYear" placeholder="Año de Fundación">    
-		                  </div>
-
-		                  <div class="col s2">Año de renovación</div>
-
-		                  <div class="col s4">
-		                    <input type="text" id="longRenewalYear" name="longRenewalYear" placeholder="Año renovación">
-		                  </div>
-		                </div>                      
-
-		                <div class="row">
-		                  <div class="col s2">Tipo</div>
-
-		                  <div class="col s4">
-		                    <input type="radio" name="longPermanentType" id="longPermanentTypei" value="intended"/> 
-		                    <label for="longPermanentTypei">Intención de siembra</label>
-		                    <input type="radio" name="longPermanentType" id="longPermanentTypep" value="plant"/>
-		                    <label for="longPermanentTypep">Plantados</label>
-		                  </div>
-
-		                  <div class="col s6">&nbsp; </div>
-		                </div>                      
-		              </div> <!--End VegetalLongCycle-->
-		            </div>  <!--Fin sector vegetal-->
-
-		            <!--Inicio sector pecuario--> 
-		            <div ng-show="pecuarioBlock">                  
-		              <div class="row">
-		                <div class="col s12">Sector pecuario</div>
-		                <div class="col s12">
-                <span> Tipo de Subsector: 
-                    <input type="checkbox" name="subsectorRumiante" id="subsectorRumiante" value="rumiante" ng-model="subsectorRumiante" ng-click="rumianteSelected();"/>
-                    <label for="subsectorRumiante">Rumiante</label>
-
-                    <input type="checkbox" name="subsectorPorcino" id="subsectorPorcino" value="porcino" ng-model="subsectorPorcino" ng-click="porcinoSelected();"/><label for="subsectorPorcino">Porcino</label>
-
-                    <input type="checkbox" name="subsectorAvicola" id="subsectorAvicola" value="avicola" ng-model="subsectorAvicola" ng-click="avicolaSelected();"/>
-                    <label for="subsectorAvicola">Avicola</label>
-
-                    <input type="checkbox" name="subsectorApicola" id="subsectorApicola" value="apicola" ng-model="subsectorApicola" ng-click="apicolaSelected();"/>
-                    <label for="subsectorApicola">Apicola</label>
-
-                    <input type="checkbox" name="subsectorCunicola" id="subsectorCunicola" value="cunicola" ng-model="subsectorCunicola" ng-click="cunicolaSelected();"/>
-                    <label for="subsectorCunicola">Cunicola</label>
-                 </span>
-              </div>
-		              </div>
-
-		              <!--inicio subsectores del sector pecuario-->      
-		              <div ng-show="subsectorRumiante">
-		              	<div class="row"> 
-		              		<div class="col s12">Existencia en numero de cabezas(el día del registro)</div>
-		              		<span> Rubro: 
-		              			<input type="checkbox" name="bovino" id="bovino" value="bovino" ng-model="bovino" ng-click="bovinoSelected();"/>
-		              			<label for="bovino">Bovino</label>
-
-		              			<input type="checkbox" name="bufalino" id="bufalino" value="bufalino" ng-model="bufalino" ng-click="bufalinoSelected();"/><label for="bufalino">Bufalino</label>
-
-		              			<input type="checkbox" name="caprino" id="caprino" value="caprino" ng-model="caprino" ng-click="caprinoSelected();"/>
-		              			<label for="caprino">Caprino</label>
-
-		              			<input type="checkbox" name="ovino" id="ovino" value="ovino" ng-model="ovino" ng-click="ovinoSelected();"/>
-		              			<label for="ovino">Ovino</label>
-		              		</span>
-		              		<!--inicio bloque bovino--> 
-		              		<div ng-show="bovino">
-		              			<div class="row">
-		              				<div class="input-field col s6">
-		              					<select id="selectedAgeclass" name="selectedAgeclass" ng-model="selectedAgeclass" multiple>
-		              						<option value="" disabled selected>Seleccione Clase etaria</option>
-		              						<option>Vacas</option>
-		              						<option>Novillas</option>
-		              						<option>Mautes</option>
-		              						<option>Becerras</option>
-		              						<option>Toros</option>
-		              						<option>Toretes</option>
-		              						<option>Novillos</option>
-		              						<option>Mautas</option>
-		              						<option>Becerros</option>
-		              					</select>
-		              					<label for="selectedAgeclass">Clase etaria</label>
-		              				</div>	
-		              			<ul>
-		              				<li ng-repeat="todo in selectedAgeclass">         	            
-		              					
-		              						<span >
-		              							<div class="input-field col s6">
-		              								<input id="AgeclassgU" type="text" class="validate" required>
-		              								<label for="AgeclassU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              							</div>
-		              						</span>
-		              					
-		              				</li>
-		              			</ul>
-		              			</div>
-
-		              			<div class="row">
-		              				<div class="col s1">Sexo:</div>
-		              				<div class="col s1">
-		              					<ul>
-		              					<li>
-		              						<input type="checkbox" name="Hembra" id="Hembra" value="Hembra" ng-model="Hembra" ng-click="HembraSelected();"/>
-		              						<label for="Hembra">Hembra</label>
-		              						</li>
-		              						<li>
-
-		              						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
-		              						</li>
-		              					</ul>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <!--inicio bloque porcino-->
-		              <div ng-show="subsectorPorcino">
-		              	<div class="row"> 
-		              		<div class="col s12">Existencia en numero de cabezas(el día del registro)</div>
-		              		<span> Rubro: 
-		              			<input type="checkbox" name="cerdamadre" id="cerdamadre" value="cerdamadre" ng-model="cerdamadre" ng-click="cerdamadreSelected();"/>
-		              			<label for="cerdamadre">Cerda madre</label>
-
-		              			<input type="checkbox" name="lechon" id="lechon" value="lechon" ng-model="lechon" ng-click="lechonSelected();"/><label for="lechon">Lechon</label>
-
-		              			<input type="checkbox" name="verraco" id="verraco" value="verraco" ng-model="verraco" ng-click="verracoSelected();"/>
-		              			<label for="verraco">Verraco</label>
-		              		</span>
-		              		<!--inicio bloque cerdamadre--> 
-		              		<div ng-show="cerdamadre">
-		              		<div class="row">
-		              			<div class="input-field col s6">
-		              				<select id="selectedSow" name="selectedSow" ng-model="selectedSow" multiple>
-		              					<option value="" disabled selected>Seleccione Clase etaria</option>
-		              					<option>Madre gestante</option>
-		              					<option>Madre lactante</option>
-		              					<option>Cerda de reemplazo</option>
-		              				</select>
-		              				<label for="selectedSow">Clase etaria</label>
-		              			</div>	
-		              			<ul>
-		              				<li ng-repeat="todo in selectedSow">
-		              					<span >
-		              						<div class="input-field col s6">
-		              							<input id="SowsU" type="text" class="validate" required>
-		              							<label for="SowU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              						</div>
-		              					</span>		              			
-		              				</li>
-		              			</ul>
-		              		</div>
-		              			<div class="row">
-		              				<div class="col s1">Sexo:</div>
-		              				<div class="col s1">
-		              					<ul>
-		              					<li>
-		              						<input type="checkbox" name="Hembra" id="Hembra" value="Hembra" ng-model="Hembra" ng-click="HembraSelected();"/>
-		              						<label for="Hembra">Hembra</label>
-		              						</li>
-		              						<li>
-
-		              						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
-		              						</li>
-		              					</ul>
-		              				</div>
-		              			</div>
-		              			
-		              			<div class="row">
-		              				<div class="col s2">Plan sanitario: Cerdas gestantes,lactantes y de reemplazo</div>
-		              				<div class="col s4">
-		              					<select ng-model="selectedSanitary" multiple>
-		              						<option>Mycoplasma</option>
-		              						<option>Psudorabia</option>
-		              						<option>Peste porcina clasica</option>
-		              						<option>Aftosa</option>
-		              						<option>Desparasitante</option>
-		              						<option>Vataminas</option>
-		              					</select>
-		              				</div>
-		              				<div class="row">
-		              					<div class="col s2">Otras</div>
-			              				<div class="col s4">
-			              					<select ng-model="selectedSanitaryplan" multiple>
-			              						<option>hierro</option>
-			              						<option>oxitocina</option>
-		              						</select>
-		              					</div>
-		              				</div>
-		              			</div>
-		              				</div> 
-		        <!--fin de cerdamadre-->
-		         <!--inicio bloque lechon-->      	
-		              		<div ng-show="lechon">
-		              		<div class="row">
-		              			<div class="input-field col s6">
-		              				<select id="selectedPiglet" name="selectedPiglet" ng-model="selectedPiglet" multiple>
-		              					<option value="" disabled selected>Seleccione Clase etaria</option>
-		              				    <option>Lechon lactando</option>
-		              					<option>Lechon destetado</option>
-		              					<option>Lechon en iniciacion</option>
-		              					<option>Lechon en crecimiento y desarrollo</option>
-		              					<option>Lechon en engorde o terminacion</option>
-
-		              				</select>
-		              				<label for="selectedPiglet">Clase etaria</label>
-		              			</div>	
-		              			<ul>
-		              				<li ng-repeat="todo in selectedPiglet">
-		              					<span >
-		              						<div class="input-field col s6">
-		              							<input id="PigletU" type="text" class="validate" required>
-		              							<label for="PigletU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              						</div>
-		              					</span>		              			
-		              				</li>
-		              			</ul>
-		              		</div>
-		              			<div class="row">
-		              				<div class="col s1">Sexo:</div>
-		              				<div class="col s1">
-		              					<ul>
-		              					<li>
-		              						<input type="checkbox" name="Hembra" id="Hembra" value="Hembra" ng-model="Hembra" ng-click="HembraSelected();"/>
-		              						<label for="Hembra">Hembra</label>
-		              						</li>
-		              						<li>
-
-		              						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
-		              						</li>
-		              					</ul>
-		              				</div>
-		              			</div>
-		              			<div class="row">
-		              				<div class="col s2">Plan sanitario: Lechones</div>
-		              				<div class="col s4">
-		              					<select ng-model="selectedSanitary" multiple>
-		              						<option>Leptospirosis</option>
-		              						<option>Parvovirosis</option>
-		              						<option>Desparasitacion</option>
-		              						<option>Vataminas</option>
-		              					</select>
-		              				</div>
-		              				<div class="row">
-		              					<div class="col s2">Otras</div>
-			              				<div class="col s4">
-			              					<select ng-model="selectedSanitaryplan" multiple>
-			              						<option>hierro</option>
-			              						<option>oxitocina</option>
-		              						</select>
-		              					</div>
-		              				</div>
-		              			</div>
-		              	</div> 
-		            <!-- fin de lechon-->
-		            <!--inicio de verraco-->   	
-		              	<div ng-show="verraco">
-		              		<div class="row">
-		              			<div class="input-field col s6">
-		              				<select id="selectedboar" name="selectedboar" ng-model="selectedboar" multiple>
-		              					<option value="" disabled selected>Seleccione Clase etaria</option>
-										<option>Verracos</option>
-		              				</select>
-		              				<label for="selectedboar">Clase etaria</label>
-		              			</div>	
-		              			<ul>
-		              				<li ng-repeat="todo in selectedboar">
-		              					<span >
-		              						<div class="input-field col s6">
-		              							<input id="boarU" type="text" class="validate" required>
-		              							<label for="boarU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              						</div>
-		              					</span>		              			
-		              				</li>
-		              			</ul>
-		              		</div>
-		              			<div class="row">
-		              				<div class="col s1">Sexo:</div>
-		              				<div class="col s1">
-		              					<ul>
-		              					<li>
-		              						<input type="checkbox" name="Hembra" id="Hembra" value="Hembra" ng-model="Hembra" ng-click="HembraSelected();"/>
-		              						<label for="Hembra">Hembra</label>
-		              						</li>
-		              						<li>
-
-		              						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
-		              						</li>
-		              					</ul>
-		              				</div>
-		              			</div>
-
-		              			<div class="row">
-		              				<div class="col s2">Plan sanitario: Verracos</div>
-		              				<div class="col s4">
-		              					<select ng-model="selectedSanitary" multiple>
-											<option>Peste porcina clasica</option>
-		              						<option>Aftosa</option>
-		              						<option>Vataminas</option>
-		              					</select>
-		              				</div>
-		              				<div class="row">
-		              					<div class="col s2">Otras</div>
-			              				<div class="col s4">
-			              					<select ng-model="selectedSanitaryplan" multiple>
-			              						<option>hierro</option>
-			              						<option>oxitocina</option>
-		              						</select>
-		              					</div>
-		              				</div>
-		              			</div>
-		              	</div> 
-                   <!--fin de verraco-->
-                   <div class="row">
-		              			<div class="input-field col s6">
-		              				<select id="selectedExploitation" name="selectedExploitation" ng-model="selectedExploitation" multiple>
-		              					<option value="" disabled selected>Seleccione tipo de explotacion</option>
-		              					<option>Granja de genetica</option>
-		              					<option>Granja de iniciacion y crecimiento</option>
-		              					<option>Granja de ciclo completo</option>
-		              					<option>Granja de cria recria</option>
-		              					<option>Granja de desarrollo y terminacion</option>
-		              					<option>Multisitios</option>
-		              				</select>
-		              				<label for="selectedExploitation">tipo de explotacion</label>
-		              			</div>	
-		              			<ul>
-		              				<li ng-repeat="todo in selectedExploitation">
-		              					<span >
-		              						<div class="input-field col s6">
-		              							<input id="ExploitationU" type="text" class="validate" required>
-		              							<label for="ExploitationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              						</div>
-		              					</span>		              			
-		              				</li>
-		              			</ul>
-		              			</div>
-		              			<div class="row">
-		              				<div class="input-field col s6">
-		              					<select id="selectedCommercialization" name="selectedCommercialization" ng-model="selectedCommercialization" multiple>
-		              						<option value="" disabled selected>Seleccione Comercializacion(venta en pie)</option>
-		              						<option>Matadero</option>
-		              						<option>Reproductores</option>
-		              						<option>Lechon</option>
-		              					</select>
-		              					<label for="selectedCommercialization">Comercializacion</label>
-		              				</div>	
-		              				<ul>
-		              					<li ng-repeat="todo in selectedCommercialization">
-		              						<span >
-		              							<div class="input-field col s6">
-		              								<input id="CommercializationU" type="text" class="validate" required>
-		              								<label for="CommercializationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              							</div>
-		              						</span>		              			
-		              					</li>
-		              				</ul>
-		              			</div>
-
-                   <div class="row">
-		              					<div class="input-field col s6">
-		              						<select id="selectedEquipment" name="selectedEquipment" ng-model="selectedEquipment" multiple>
-						    					<option value="" disabled selected>Seleccione Edificacion</option>
-		              							<option>Vivienda Principal</option>
-		              							<option>Vivienda para Obreros</option>
-		              							<option>Galpon</option>
-		              							<option>Galpon(m)</option>
-		              							<option>Area administrativa</option>
-		              							<option>Deposito</option>
-		              							<option>Cuarto de aseo</option>
-		              							<option>Deposito o almacen</option>
-		              							<option>Silos</option>
-		              						</select>
-		              						<label for="selectedEquipment">Edificaciones</label>
-		              					</div>	
-		              					<ul>
-		              						<li ng-repeat="todo in selectedEquipment">       	            
-		              							<div class="row">
-		              								<span >
-		              									<div class="input-field col s6">
-		              										 <input id="EquipmentU" type="text" class="validate" required>
-					                  	                     <label for="EquipmentU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              									</div>
-		              								</span>		              			
-		              							</li>
-		              						</ul>
-		              					</div>
-		              					<div class="row">
-		              					<div class="input-field col s6">
-		              						<select id="selectedMachine" name="selectedMachine" ng-model="selectedMachine" multiple>
-						    					<option value="" disabled selected>Seleccione la maquinaria/equipos</option>
-		              							<option>Bebedero</option>
-		              							<option>Comederos</option>
-		              							<option>Bomba de agua</option>
-		              							<option>Manguera ( 1/2 pulgadas)</option>
-		              							<option>Equipo de bombeo para pozo profundo</option>
-		              							<option>Equipo de bombeo sumergible</option>
-		              						</select>
-		              						<label for="selectedMachine">Maquinarias y equipos</label>
-		              					</div>	
-		              					<ul>
-		              						<li ng-repeat="todo in selectedMachine">       	            
-		              							<div class="row">
-		              								<span >
-		              									<div class="input-field col s6">
-		              										 <input id="organismup" type="text" class="validate" required>
-					                  	                     <label for="organismup" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              									</div>
-		              								</span>		              			
-		              							</li>
-		              						</ul>
-		              					</div>
-		              					<div class="row">
-		              					<div class="input-field col s6">
-		              						<select id="selectedFacilities" name="selectedFacilities" ng-model="selectedFacilities" multiple>
-						    					<option value="" disabled selected>Seleccione la Instalaciones</option>
-		              							<option>Embarcaderos</option>
-		              							<option>Corrales de cuarentena</option>
-		              							<option>Laboratorio</option>
-		              							<option>Enfermeria</option>
-		              							<option>Area de monta</option>
-		              							<option>Corrales de gestion</option>
-		              						</select>
-		              						<label for="selectedFacilities">Instalaciones</label>
-		              					</div>	
-		              					<ul>
-		              						<li ng-repeat="todo in selectedFacilities">       	            
-		              							<div class="row">
-		              								<span >
-		              									<div class="input-field col s6">
-		              										 <input id="Facilitiesp" type="text" class="validate" required>
-					                  	                     <label for="Facilitiesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              									</div>
-		              								</span>		              			
-		              							</li>
-		              						</ul>
-		              					</div>
-		              </div>     			
-		            </div>
-		              <!--fin porcino--> 
-		              <!--inicio apicola-->
-		                <div ng-show="subsectorApicola">
-		                <div class="row">
-		              					<div class="input-field col s6">
-		              						<select id="selectedProduction" name="selectedProduction" ng-model="selectedProduction" multiple>
-						    					<option value="" disabled selected>Seleccione Produccion Apicola</option>
-		              							<option>Miel</option>
-		              							<option>Cera</option>
-		              							<option>Polen</option>
-		              							<option>Jalea real</option>
-		              							<option>Propoleo</option>
-		              							<option>Apitoxina</option>
-		              						</select>
-		              						<label for="selectedProduction">Produccion Apicola</label>
-		              					</div>	
-		              					<ul>
-		              						<li ng-repeat="todo in selectedProduction">       	            
-		              							<div class="row">
-		              								<span >
-		              									<div class="input-field col s6">
-		              										 <input id="Productionp" type="text" class="validate" required>
-					                  	                     <label for="Productionp" data-error="Campo requerido" data-success="OK!">KG ({{todo}})</label>
-		              									</div>
-		              								</span>		              			
-		              							</li>
-		              						</ul>
-		              					</div>
-		              					<div class="row">
-		              						<div class="col s2">Meses de cosecha</div>
-		              						<div class="col s4">
-		              							<select ng-model="selectedMonths" multiple>
-		              								<option>Enero</option>
-		              								<option>Febrero</option>
-		              								<option>Marzo</option>
-		              								<option>Abril</option>
-		              								<option>Mayo</option>
-		              								<option>Junio</option>
-		              								<option>Julio</option>
-		              								<option>Agosto</option>
-		              								<option>Septiembre</option>
-		              								<option>Octubre</option>
-		              								<option>Noviembre</option>
-		              								<option>Diciembre</option>
-		              							</select>
-		              						</div>
-		              					</div>
-		              					<div class="row">
-		              						<div class="input-field col s6">
-		              							<select id="selectedRaces" name="selectedRaces" ng-model="selectedRaces" multiple>
-		              								<option value="" disabled selected>Seleccione Razas</option>
-		              								<option>Apis mellifera ligustica (italiana)</option>
-		              								<option>Apis mellifera iberica (espanola)</option>
-		              								<option>Apis mellifera scutellata</option>
-		              								<option>Melipona (sin aguijon)</option>
-		              							</select>
-		              							<label for="selectedRaces">Razas</label>
-		              						</div>	
-		              						<ul>
-		              							<li ng-repeat="todo in selectedRaces">       	            
-		              								<div class="row">
-		              									<span >
-		              										<div class="input-field col s6">
-		              											<input id="Racesp" type="text" class="validate" required>
-		              											<label for="Racesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              										</div>
-		              									</span>		              			
-		              								</li>
-		              							</ul>
-		              						</div>
-		              						<div class="row">
-		              							<div class="input-field col s6">
-		              								<select id="selectedExploitation" name="selectedExploitation" ng-model="selectedExploitation" multiple>
-		              									<option value="" disabled selected>Seleccione tipo de explotacion</option>
-		              									<option>Grande</option>
-		              									<option>Mediano</option>
-		              									<option>Pequeno</option>
-		              								</select>
-		              								<label for="selectedExploitation">tipo de explotacion</label>
-		              							</div>	
-		              							<ul>
-		              								<li ng-repeat="todo in selectedExploitation">
-		              									<span >
-		              										<div class="input-field col s6">
-		              											<input id="ExploitationU" type="text" class="validate" required>
-		              											<label for="ExploitationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-		              										</div>
-		              									</span>		              			
-		              								</li>
-		              							</ul>
-		              						</div>
-		              						<div class="row">
-		              							<div class="input-field col s6">
-		              								<select id="selectedHive" name="selectedHive" ng-model="selectedHive" multiple>
-		              									<option value="" disabled selected>Seleccione Tipo de Colmena</option>
-		              									<option>Langtroth</option>
-		              									<option>Datant</option>
-		              									<option>Layens</option>
-		              									<option>Rustica</option>
-		              									<option>Otros</option>
-		              								</select>
-		              								<label for="selectedHive">Tipo de Colmena</label>
-		              							</div>	
-		              							<ul>
-		              								<li ng-repeat="todo in selectedHive">         	            
-		              									<div class="row">
-		              										<span >
-		              											<div class="input-field col s6">
-		              												<input id="Hivesinproduction" type="text" class="validate" required>
-		              												<label for="Hivesinproduction" data-error="Campo requerido" data-success="OK!">Cantidad total de colmenas en produccion ({{todo}})</label>
-		              											</div>
-		              											<div class="input-field col s6">
-		              												<input id="Numberofqueens" type="text" class="validate" required>
-		              												<label for="Numberofqueens" data-error="Campo requerido" data-success="OK!">Cantidad de reinas ({{todo}})</label>
-		              											</div>
-		              										</span>
-		              									</div>
-		              								</li>
-		              							</ul>
-		              						</div>
-		              						<div class="row">
-		              						<div class="col s2">Plan sanitario </div>
-
-		              						<div class="col s3">Varroa(control)
-		              							<input type="radio" name="Varroa" id="Varroa" value="Si"/> 
-		              							<label for="Varroa">Si</label>
-		              							<input type="radio" name="Varroa" id="Varroan" value="No"/>
-		              							<label for="Varroan">No</label>
-		              						</div>
-		              						<div class="col s3">Polilla(control)
-		              							<input type="radio" name="Polilla" id="Polilla" value="Si"/> 
-		              							<label for="Polilla">Si</label>
-		              							<input type="radio" name="Polilla" id="Polillan" value="No"/>
-		              							<label for="Polillan">No</label>
-		              						</div>
-		              						<div class="col s3">Otros
-		              							<input type="radio" name="Otros" id="Otros" value="Si"/> 
-		              							<label for="Otros">Si</label>
-		              							<input type="radio" name="Otros" id="Otrosn" value="No"/>
-		              							<label for="Otrosn">No</label>
-		              						</div>
-		              						</div>
-		              						<div class="row">
-
-		              						<div class="col s2">Equipamiento</div>
-
-		              						<div class="col s3">Ahumador
-		              							<input type="radio" name="Ahumador" id="Ahumador" value="Si"/> 
-		              							<label for="Ahumador">Si</label>
-		              							<input type="radio" name="Ahumador" id="Ahumadorn" value="No"/>
-		              							<label for="Ahumadorn">No</label>
-		              						</div>
-		              						<div class="col s3">Alimentador
-		              							<input type="radio" name="Alimentador" id="Alimentador" value="Si"/> 
-		              							<label for="Alimentador">Si</label>
-		              							<input type="radio" name="Alimentador" id="Alimentadorn" value="No"/>
-		              							<label for="Alimentadorn">No</label>
-		              						</div>
-		              						<div class="col s3">Alza cuadros
-		              							<input type="radio" name="Alzacuadros" id="Alzacuadros" value="Si"/> 
-		              							<label for="Alzacuadros">Si</label>
-		              							<input type="radio" name="Alzacuadros" id="Alzacuadrosn" value="No"/>
-		              							<label for="Alzacuadrosn">No</label>
-		              						</div>
-
-		                </div>
-		              				
-		              				
-		              <!--fin de apicola-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!---fin de pecurio-->
-		            <div ng-show="agroIndustriaBlock">                  
-		              <div class="row">
-		                <div class="col s12">Sector agroindustria en construcción</div>
-		              </div>
-		            </div>                      
-		            <!--Fin sector pecuario-->
-		          </div> <!--Fin de la unidad de producción-->
-		        </li>    
-		      </ul>
-		    </div>
-		  </div>
-	  </div> <!--end form-->
-	</div>
+				</ul>
+			</div>
+			<div class="row">
+			<div class="input-field col s6">
+				<select id="selectedMachine" name="selectedMachine" ng-model="selectedMachine" multiple>
+				<option value="" disabled selected>Seleccione la maquinaria/equipos</option>
+				<option>Tractor 120 Hp</option>
+        		<option>Tractor 100 Hp</option>
+        		<option>Tractor < 80Hp</option>
+        		<option>Rastroexcavadora</option>
+        		<option>Airedores</option>
+        		<option>Zorra</option>
+        		<option>Carretas</option>
+        		<option>Cultivadoras de pasto</option>
+        		<option>Palas para Tractores</option>
+		    </select>
+		    <label for="selectedMachine">Maquinarias y equipos</label>
+			</div>	
+			<ul>
+				<li ng-repeat="todo in selectedMachine">       	            
+					<div class="row">
+						<span >
+							<div class="input-field col s6">
+								 <input id="organismup" type="text" class="validate" required>
+      	                     <label for="organismup" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+							</div>
+						</span>		              			
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+			<div class="input-field col s6">
+				<select id="selectedFacilities" name="selectedFacilities" ng-model="selectedFacilities" multiple>
+				<option value="" disabled selected>Seleccione la Instalaciones</option>
+					<option>cuarto de aseo</option>
+					<option>Corrales de cuarentena</option>
+					<option>embarcarderos</option>
+					<option>verraquera</option>
+					<option>corrales de monta</option>
+					<option>Corrales de maternidad y paricion</option>
+				</select>
+				<label for="selectedFacilities">Instalaciones</label>
+			</div>	
+			<ul>
+				<li ng-repeat="todo in selectedFacilities">       	            
+					<div class="row">
+						<span >
+							<div class="input-field col s6">
+								 <input id="Facilitiesp" type="text" class="validate" required>
+      	                     <label for="Facilitiesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+							</div>
+						</span>		              			
+					</li>
+				</ul>
+			</div>
+
+
+
+
+    </div><!--fin de bloque rumiante-->
+    <!--inicio bloque porcino-->
+      <div ng-show="subsectorPorcino">
+      	<div class="row"> 
+      		<div class="col s12">Existencia en numero de cabezas(el día del registro)</div>
+      		<span> Rubro: 
+      			<input type="checkbox" name="cerdamadre" id="cerdamadre" value="cerdamadre" ng-model="cerdamadre" ng-click="cerdamadreSelected();"/>
+      			<label for="cerdamadre">Cerda madre</label>
+
+      			<input type="checkbox" name="lechon" id="lechon" value="lechon" ng-model="lechon" ng-click="lechonSelected();"/><label for="lechon">Lechon</label>
+
+      			<input type="checkbox" name="verraco" id="verraco" value="verraco" ng-model="verraco" ng-click="verracoSelected();"/>
+      			<label for="verraco">Verraco</label>
+      		</span>
+      		<!--inicio bloque cerdamadre--> 
+      		<div ng-show="cerdamadre">
+      		<div class="row">
+      			<div class="input-field col s6">
+      				<select id="selectedSow" name="selectedSow" ng-model="selectedSow" multiple>
+      					<option value="" disabled selected>Seleccione Clase etaria</option>
+      					<option>Madre gestante</option>
+      					<option>Madre lactante</option>
+      					<option>Cerda de reemplazo</option>
+      				</select>
+      				<label for="selectedSow">Clase etaria</label>
+      			</div>	
+      			<ul>
+      				<li ng-repeat="todo in selectedSow">
+      					<span >
+      						<div class="input-field col s6">
+      							<input id="SowsU" type="text" class="validate" required>
+      							<label for="SowU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      						</div>
+      					</span>		              			
+      				</li>
+      			</ul>
+      		</div>
+      			<div class="row">
+      				<div class="col s1">Sexo:</div>
+      				<div class="col s1">
+      					<ul>
+      					<li>
+      						<input type="checkbox" name="hembra" id="hembra" value="hembra" ng-model="hembra" ng-click="hembraSelected();"/>
+      						<label for="hembra">hembra</label>
+      						</li>
+      						<li>
+
+      						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
+      						</li>
+      					</ul>
+      				</div>
+      			</div>
+      			
+      			<div class="row">
+      				<div class="col s2">Plan sanitario: Cerdas gestantes,lactantes y de reemplazo</div>
+      				<div class="col s4">
+      					<select ng-model="selectedSanitary" multiple>
+      						<option>Mycoplasma</option>
+      						<option>Psudorabia</option>
+      						<option>Peste porcina clasica</option>
+      						<option>Aftosa</option>
+      						<option>Desparasitante</option>
+      						<option>Vataminas</option>
+      					</select>
+      				</div>
+      				<div class="row">
+      					<div class="col s2">Otras</div>
+          				<div class="col s4">
+          					<select ng-model="selectedSanitaryplan" multiple>
+          						<option>hierro</option>
+          						<option>oxitocina</option>
+      						</select>
+      					</div>
+      				</div>
+      			</div>
+      				</div> 
+<!--fin de cerdamadre-->
+ <!--inicio bloque lechon-->      	
+      		<div ng-show="lechon">
+      		<div class="row">
+      			<div class="input-field col s6">
+      				<select id="selectedPiglet" name="selectedPiglet" ng-model="selectedPiglet" multiple>
+      					<option value="" disabled selected>Seleccione Clase etaria</option>
+      				    <option>Lechon lactando</option>
+      					<option>Lechon destetado</option>
+      					<option>Lechon en iniciacion</option>
+      					<option>Lechon en crecimiento y desarrollo</option>
+      					<option>Lechon en engorde o terminacion</option>
+
+      				</select>
+      				<label for="selectedPiglet">Clase etaria</label>
+      			</div>	
+      			<ul>
+      				<li ng-repeat="todo in selectedPiglet">
+      					<span >
+      						<div class="input-field col s6">
+      							<input id="PigletU" type="text" class="validate" required>
+      							<label for="PigletU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      						</div>
+      					</span>		              			
+      				</li>
+      			</ul>
+      		</div>
+      			<div class="row">
+      				<div class="col s1">Sexo:</div>
+      				<div class="col s1">
+      					<ul>
+      					<li>
+      						<input type="checkbox" name="hembra" id="hembra" value="hembra" ng-model="hembra" ng-click="hembraSelected();"/>
+      						<label for="hembra">hembra</label>
+      						</li>
+      						<li>
+
+      						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
+      						</li>
+      					</ul>
+      				</div>
+      			</div>
+      			<div class="row">
+      				<div class="col s2">Plan sanitario: Lechones</div>
+      				<div class="col s4">
+      					<select ng-model="selectedSanitary" multiple>
+      						<option>Leptospirosis</option>
+      						<option>Parvovirosis</option>
+      						<option>Desparasitacion</option>
+      						<option>Vataminas</option>
+      					</select>
+      				</div>
+      				<div class="row">
+      					<div class="col s2">Otras</div>
+          				<div class="col s4">
+          					<select ng-model="selectedSanitaryplan" multiple>
+          						<option>hierro</option>
+          						<option>oxitocina</option>
+      						</select>
+      					</div>
+      				</div>
+      			</div>
+      	</div> 
+    <!-- fin de lechon-->
+    <!--inicio de verraco-->   	
+      	<div ng-show="verraco">
+      		<div class="row">
+      			<div class="input-field col s6">
+      				<select id="selectedboar" name="selectedboar" ng-model="selectedboar" multiple>
+      					<option value="" disabled selected>Seleccione Clase etaria</option>
+						<option>Verracos</option>
+      				</select>
+      				<label for="selectedboar">Clase etaria</label>
+      			</div>	
+      			<ul>
+      				<li ng-repeat="todo in selectedboar">
+      					<span >
+      						<div class="input-field col s6">
+      							<input id="boarU" type="text" class="validate" required>
+      							<label for="boarU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      						</div>
+      					</span>		              			
+      				</li>
+      			</ul>
+      		</div>
+      			<div class="row">
+      				<div class="col s1">Sexo:</div>
+      				<div class="col s1">
+      					<ul>
+      					<li>
+      						<input type="checkbox" name="hembra" id="hembra" value="hembra" ng-model="hembra" ng-click="hembraSelected();"/>
+      						<label for="hembra">hembra</label>
+      						</li>
+      						<li>
+
+      						<input type="checkbox" name="Macho" id="Macho" value="Macho" ng-model="Macho" ng-click="MachoSelected();"/><label for="Macho">Macho</label>
+      						</li>
+      					</ul>
+      				</div>
+      			</div>
+
+      			<div class="row">
+      				<div class="col s2">Plan sanitario: Verracos</div>
+      				<div class="col s4">
+      					<select ng-model="selectedSanitary" multiple>
+							<option>Peste porcina clasica</option>
+      						<option>Aftosa</option>
+      						<option>Vataminas</option>
+      					</select>
+      				</div>
+      				<div class="row">
+      					<div class="col s2">Otras</div>
+          				<div class="col s4">
+          					<select ng-model="selectedSanitaryplan" multiple>
+          						<option>hierro</option>
+          						<option>oxitocina</option>
+      						</select>
+      					</div>
+      				</div>
+      			</div>
+  	    	</div> 
+  		 <!--fin de verraco-->
+   				<div class="row">
+      			<div class="input-field col s6">
+      				<select id="selectedExploitation" name="selectedExploitation" ng-model="selectedExploitation" multiple>
+      					<option value="" disabled selected>Seleccione tipo de explotacion</option>
+      					<option>Granja de genetica</option>
+      					<option>Granja de iniciacion y crecimiento</option>
+      					<option>Granja de ciclo completo</option>
+      					<option>Granja de cria recria</option>
+      					<option>Granja de desarrollo y terminacion</option>
+      					<option>Multisitios</option>
+      				</select>
+      				<label for="selectedExploitation">tipo de explotacion</label>
+      			</div>	
+      			<ul>
+      				<li ng-repeat="todo in selectedExploitation">
+      					<span >
+      						<div class="input-field col s6">
+      							<input id="ExploitationU" type="text" class="validate" required>
+      							<label for="ExploitationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      						</div>
+      					</span>		              			
+      				</li>
+      			</ul>
+      			</div>
+      			<div class="row">
+      				<div class="input-field col s6">
+      					<select id="selectedCommercialization" name="selectedCommercialization" ng-model="selectedCommercialization" multiple>
+      						<option value="" disabled selected>Seleccione Comercializacion(venta en pie)</option>
+      						<option>Matadero</option>
+      						<option>Reproductores</option>
+      						<option>Lechon</option>
+      					</select>
+      					<label for="selectedCommercialization">Comercializacion</label>
+      				</div>	
+      				<ul>
+      					<li ng-repeat="todo in selectedCommercialization">
+      						<span >
+      							<div class="input-field col s6">
+      								<input id="CommercializationU" type="text" class="validate" required>
+      								<label for="CommercializationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      							</div>
+      						</span>		              			
+      					</li>
+      				</ul>
+      			</div>
+
+   					<div class="row">
+      					<div class="input-field col s6">
+      						<select id="selectedEquipment" name="selectedEquipment" ng-model="selectedEquipment" multiple>
+		    					<option value="" disabled selected>Seleccione Edificacion</option>
+      							<option>Vivienda Principal</option>
+      							<option>Vivienda para Obreros</option>
+      							<option>Galpon</option>
+      							<option>Galpon(m)</option>
+      							<option>Area administrativa</option>
+      							<option>Deposito</option>
+      							<option>Cuarto de aseo</option>
+      							<option>Deposito o almacen</option>
+      							<option>Silos</option>
+      						</select>
+      						<label for="selectedEquipment">Edificaciones</label>
+      					</div>	
+      					<ul>
+      						<li ng-repeat="todo in selectedEquipment">       	            
+      							<div class="row">
+      								<span >
+      									<div class="input-field col s6">
+      										 <input id="EquipmentU" type="text" class="validate" required>
+	                  	                     <label for="EquipmentU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      									</div>
+      								</span>		              			
+      							</li>
+      						</ul>
+      					</div>
+      					<div class="row">
+      					<div class="input-field col s6">
+      						<select id="selectedMachine" name="selectedMachine" ng-model="selectedMachine" multiple>
+		    					<option value="" disabled selected>Seleccione la maquinaria/equipos</option>
+      							<option>Bebedero</option>
+      							<option>Comederos</option>
+      							<option>Bomba de agua</option>
+      							<option>Manguera ( 1/2 pulgadas)</option>
+      							<option>Equipo de bombeo para pozo profundo</option>
+      							<option>Equipo de bombeo sumergible</option>
+      						</select>
+      						<label for="selectedMachine">Maquinarias y equipos</label>
+      					</div>	
+      					<ul>
+      						<li ng-repeat="todo in selectedMachine">       	            
+      							<div class="row">
+      								<span >
+      									<div class="input-field col s6">
+      										 <input id="organismup" type="text" class="validate" required>
+	                  	                     <label for="organismup" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      									</div>
+      								</span>		              			
+      							</li>
+      						</ul>
+      					</div>
+      					<div class="row">
+      					<div class="input-field col s6">
+      						<select id="selectedFacilities" name="selectedFacilities" ng-model="selectedFacilities" multiple>
+		    					<option value="" disabled selected>Seleccione la Instalaciones</option>
+      							<option>Embarcaderos</option>
+      							<option>Corrales de cuarentena</option>
+      							<option>Laboratorio</option>
+      							<option>Enfermeria</option>
+      							<option>Area de monta</option>
+      							<option>Corrales de gestion</option>
+      						</select>
+      						<label for="selectedFacilities">Instalaciones</label>
+      					</div>	
+      					<ul>
+      						<li ng-repeat="todo in selectedFacilities">       	            
+      							<div class="row">
+      								<span >
+      									<div class="input-field col s6">
+      										 <input id="Facilitiesp" type="text" class="validate" required>
+	                  	                     <label for="Facilitiesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      									</div>
+      								</span>		              			
+      							</li>
+      						</ul>
+      					</div>
+      					<div class="row">
+      						<div class="col s2">TRÁMITES O PERMISOS</div>
+      						<div class="col s4">
+      							<select ng-model="selectedIrrigation" multiple>
+      								<option>Certificado de Sacrificio de hembras Bovinas y/o Bufalinas</option>
+      								<option>Inspección de Carga Fito y Zoosanitaria</option>
+      								<option>Permiso Sanitario de importación de Plaguicidas ( otorgada por INSAI )</option>
+      								<option>Permiso Sanitario o aval de vacunación emitido por el INSAI (Instituto Nacional de Salud Agrícola Integral)</option>
+      								<option>Permisos de Insumos Agrícolas ( otorgada por INSAI )</option>
+      								<option>Permisos de servicios Pecuarios ( otorgada por INSAI )</option>
+      								<option>Permisos Fitosanitario de importación ( otorgada por INSAI )</option>
+      								<option>Permiso Sanitario de importación de Plaguicidas</option>
+      								<option>Beneficiario de financiamiento </option>
+      								<option>Beneficiario de financiamiento </option>
+      								<option>Cosecha arrimada en  Silo</option>
+      								<option>Historial de insumos adquiridos</option>
+      								<option>Beneficiario de financiamiento </option>
+      								<option>Beneficiario de asesoramiento técnico</option>
+
+      							</select>
+      						</div>
+      					</div>  
+      				</div>     			
+      			</div>
+      <!--fin porcino--> 
+
+
+      <!--inicio apicola-->
+        <div ng-show="subsectorApicola">
+        <div class="row">
+      					<div class="input-field col s6">
+      						<select id="selectedProduction" name="selectedProduction" ng-model="selectedProduction" multiple>
+		    					<option value="" disabled selected>Seleccione Produccion Apicola</option>
+      							<option>Miel</option>
+      							<option>Cera</option>
+      							<option>Polen</option>
+      							<option>Jalea real</option>
+      							<option>Propoleo</option>
+      							<option>Apitoxina</option>
+      						</select>
+      						<label for="selectedProduction">Produccion Apicola</label>
+      					</div>	
+      					<ul>
+      						<li ng-repeat="todo in selectedProduction">       	            
+      							<div class="row">
+      								<span>
+      									<div class="input-field col s6">
+      										 <input id="Productionp" type="text" class="validate" required>
+	                  	                     <label for="Productionp" data-error="Campo requerido" data-success="OK!">KG ({{todo}})</label>
+      									</div>
+      								</span>		              			
+      							</li>
+      						</ul>
+      					</div>
+      					<div class="row">
+      						<div class="col s2">Meses de cosecha</div>
+      						<div class="col s4">
+      							<select ng-model="selectedMonths" multiple>
+      								<option>Enero</option>
+      								<option>Febrero</option>
+      								<option>Marzo</option>
+      								<option>Abril</option>
+      								<option>Mayo</option>
+      								<option>Junio</option>
+      								<option>Julio</option>
+      								<option>Agosto</option>
+      								<option>Septiembre</option>
+      								<option>Octubre</option>
+      								<option>Noviembre</option>
+      								<option>Diciembre</option>
+      							</select>
+      						</div>
+      					</div>
+      					<div class="row">
+      						<div class="input-field col s6">
+      							<select id="selectedRaces" name="selectedRaces" ng-model="selectedRaces" multiple>
+      								<option value="" disabled selected>Seleccione Razas</option>
+      								<option>Apis mellifera ligustica (italiana)</option>
+      								<option>Apis mellifera iberica (espanola)</option>
+      								<option>Apis mellifera scutellata</option>
+      								<option>Melipona (sin aguijon)</option>
+      							</select>
+      							<label for="selectedRaces">Razas</label>
+      						</div>	
+      						<ul>
+      							<li ng-repeat="todo in selectedRaces">       	            
+      								<div class="row">
+      									<span >
+      										<div class="input-field col s6">
+      											<input id="Racesp" type="text" class="validate" required>
+      											<label for="Racesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      										</div>
+      									</span>		              			
+      								</li>
+      							</ul>
+      						</div>
+      						<div class="row">
+      							<div class="input-field col s6">
+      								<select id="selectedExploitation" name="selectedExploitation" ng-model="selectedExploitation" multiple>
+      									<option value="" disabled selected>Seleccione tipo de explotacion</option>
+      									<option>Grande</option>
+      									<option>Mediano</option>
+      									<option>Pequeno</option>
+      								</select>
+      								<label for="selectedExploitation">tipo de explotacion</label>
+      							</div>	
+      							<ul>
+      								<li ng-repeat="todo in selectedExploitation">
+      									<span >
+      										<div class="input-field col s6">
+      											<input id="ExploitationU" type="text" class="validate" required>
+      											<label for="ExploitationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+      										</div>
+      									</span>		              			
+      								</li>
+      							</ul>
+      						</div>
+      						<div class="row">
+      							<div class="input-field col s6">
+      								<select id="selectedHive" name="selectedHive" ng-model="selectedHive" multiple>
+      									<option value="" disabled selected>Seleccione Tipo de Colmena</option>
+      									<option>Langtroth</option>
+      									<option>Datant</option>
+      									<option>Layens</option>
+      									<option>Rustica</option>
+      									<option>Otros</option>
+      								</select>
+      								<label for="selectedHive">Tipo de Colmena</label>
+      							</div>	
+      							<ul>
+      								<li ng-repeat="todo in selectedHive">         	            
+      									<div class="row">
+      										<span >
+      											<div class="input-field col s6">
+      												<input id="Hivesinproduction" type="text" class="validate" required>
+      												<label for="Hivesinproduction" data-error="Campo requerido" data-success="OK!">Cantidad total de colmenas en produccion ({{todo}})</label>
+      											</div>
+      											<div class="input-field col s6">
+      												<input id="Numberofqueens" type="text" class="validate" required>
+      												<label for="Numberofqueens" data-error="Campo requerido" data-success="OK!">Cantidad de reinas ({{todo}})</label>
+      											</div>
+      										</span>
+      									</div>
+      								</li>
+      							</ul>
+      						</div>
+      						<div class="row">
+      						<div class="col s2">Plan sanitario </div>
+
+      						<div class="col s3">Varroa(control)
+      							<input type="radio" name="Varroa" id="Varroa" value="Si"/> 
+      							<label for="Varroa">Si</label>
+      							<input type="radio" name="Varroa" id="Varroan" value="No"/>
+      							<label for="Varroan">No</label>
+      						</div>
+      						<div class="col s3">Polilla(control)
+      							<input type="radio" name="Polilla" id="Polilla" value="Si"/> 
+      							<label for="Polilla">Si</label>
+      							<input type="radio" name="Polilla" id="Polillan" value="No"/>
+      							<label for="Polillan">No</label>
+      						</div>
+      						<div class="col s3">Otros
+      							<input type="radio" name="Otros" id="Otros" value="Si"/> 
+      							<label for="Otros">Si</label>
+      							<input type="radio" name="Otros" id="Otrosn" value="No"/>
+      							<label for="Otrosn">No</label>
+      						</div>
+      						</div>
+      						<div class="row">
+
+      						<div class="col s2">Equipamiento</div>
+
+      						<div class="col s3">Ahumador
+      							<input type="radio" name="Ahumador" id="Ahumador" value="Si"/> 
+      							<label for="Ahumador">Si</label>
+      							<input type="radio" name="Ahumador" id="Ahumadorn" value="No"/>
+      							<label for="Ahumadorn">No</label>
+      						</div>
+      						<div class="col s3">Alimentador
+      							<input type="radio" name="Alimentador" id="Alimentador" value="Si"/> 
+      							<label for="Alimentador">Si</label>
+      							<input type="radio" name="Alimentador" id="Alimentadorn" value="No"/>
+      							<label for="Alimentadorn">No</label>
+      						</div>
+      						<div class="col s3">Alza cuadros
+      							<input type="radio" name="Alzacuadros" id="Alzacuadros" value="Si"/> 
+      							<label for="Alzacuadros">Si</label>
+      							<input type="radio" name="Alzacuadros" id="Alzacuadrosn" value="No"/>
+      							<label for="Alzacuadrosn">No</label>
+      						</div>
+      					</div>
+      					<div class="row">
+      						<div class="col s2">TRÁMITES O PERMISOS</div>
+      						<div class="col s4">
+      							<select ng-model="selectedIrrigation" multiple>
+      								<option>Certificado de Sacrificio de hembras Bovinas y/o Bufalinas</option>
+      								<option>Inspección de Carga Fito y Zoosanitaria</option>
+      								<option>Permiso Sanitario de importación de Plaguicidas ( otorgada por INSAI )</option>
+      								<option>Permiso Sanitario o aval de vacunación emitido por el INSAI (Instituto Nacional de Salud Agrícola Integral)</option>
+      								<option>Permisos de Insumos Agrícolas ( otorgada por INSAI )</option>
+      								<option>Permisos de servicios Pecuarios ( otorgada por INSAI )</option>
+      								<option>Permisos Fitosanitario de importación ( otorgada por INSAI )</option>
+      								<option>Permiso Sanitario de importación de Plaguicidas</option>
+      								<option>Beneficiario de financiamiento </option>
+      								<option>Beneficiario de financiamiento </option>
+      								<option>Cosecha arrimada en  Silo</option>
+      								<option>Historial de insumos adquiridos</option>
+      								<option>Beneficiario de financiamiento </option>
+      								<option>Beneficiario de asesoramiento técnico</option>
+
+      							</select>
+      						</div>
+      					</div>  
+
+
+      				</div>	
+      <!--fin de apicola-->
+
+</div><!---fin de pecurio-->
+
+        <div ng-show="agroIndustriaBlock">                  
+          <div class="row">
+            <div class="col s12">Sector agroindustria en construcción</div>
+          </div>
+        </div>                      
+        <!--Fin sector agroindustria-->
+      </div> <!--Fin de la unidad de producción-->
+    </li>    
+  </ul>
+</div>
+</div>
+</div> <!--end form-->
+</div>
 </div><!-- end of container -->
 
 
@@ -1622,51 +2215,51 @@
 
 
 
-  
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Ministerio del Poder Popular para la Agricultura Productiva y Tierras</h5>
-          <p class="grey-text text-lighten-4">Si deseas conocer más acerca de nuestra nomativa, visita nuestro espacio</p>
+
+<footer class="page-footer teal">
+<div class="container">
+  <div class="row">
+    <div class="col l6 s12">
+      <h5 class="white-text">Ministerio del Poder Popular para la Agricultura Productiva y Tierras</h5>
+      <p class="grey-text text-lighten-4">Si deseas conocer más acerca de nuestra nomativa, visita nuestro espacio</p>
 
 
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Contacto</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Tel: (212) 555 7890 / 456 7891</a></li>
-            <li><a class="white-text" href="#!">administrador@mpat.gob.ve</a></li>
-           
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Lo nuevo</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Manuales</a></li>
-            <li><a class="white-text" href="#!">Normativas</a></li>
-           
-          </ul>
-        </div>
-      </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
+    <div class="col l3 s12">
+      <h5 class="white-text">Contacto</h5>
+      <ul>
+        <li><a class="white-text" href="#!">Tel: (212) 555 7890 / 456 7891</a></li>
+        <li><a class="white-text" href="#!">administrador@mpat.gob.ve</a></li>
+       
+      </ul>
     </div>
-  </footer>
+    <div class="col l3 s12">
+      <h5 class="white-text">Lo nuevo</h5>
+      <ul>
+        <li><a class="white-text" href="#!">Manuales</a></li>
+        <li><a class="white-text" href="#!">Normativas</a></li>
+       
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer-copyright">
+  <div class="container">
+  Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+  </div>
+</div>
+</footer>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>-->
-  <script src="js/angular.min.js"></script>
-  <script src="js/controller.js"></script>
- 
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>-->
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
 
 
-  </body>
+
+</body>
 </html>
