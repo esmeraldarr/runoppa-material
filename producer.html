@@ -1437,24 +1437,35 @@
     		</div>
     	</div>
     	<div class="row">
-    		<div class="col s2">Modalidad de producción</div>
-    		<div class="col s4">
-    			<select ng-model="selectedIrrigation" multiple>
-    				<option>Cria Vaca-becerro</option>
-    				<option>Cria Bufala-bucerro</option>
-    				<option>Cria Cabra-cabrito</option>
-    				<option>Cria Oveja-corderito</option>
-    				<option>Cria Vaca-maute</option>
-    				<option>Cria Bufala-bumaute</option>
-    				<option>Cria Cabra-cabriton</option>
-    				<option>Cria Oveja-cordero</option>
-    				<option>Cria Vaca-novillo</option>
-    				<option>Cria Bufala-buvillo</option>
-    				<option>Levante</option>
-    				<option>Ceba</option>
-    			</select>
-    		</div>
-    	</div>
+			<div class="input-field col s6">
+				<select id="selectedModality" name="selectedModality" ng-model="selectedModality" multiple>
+		    	<option value="" disabled selected>Seleccione Modalidad de producción</option>
+              	<option>Cria Vaca-becerro</option>
+    			<option>Cria Bufala-bucerro</option>
+    			<option>Cria Cabra-cabrito</option>
+    			<option>Cria Oveja-corderito</option>
+    			<option>Cria Vaca-maute</option>
+    			<option>Cria Bufala-bumaute</option>
+    			<option>Cria Cabra-cabriton</option>
+    			<option>Cria Oveja-cordero</option>
+    			<option>Cria Vaca-novillo</option>
+    			<option>Cria Bufala-buvillo</option>
+    			<option>Levante</option>
+    			<option>Ceba</option>
+		    </select>
+		    <label for="selectedModality">Modalidad de producción</label>
+			</div>	
+			<ul>
+				<li ng-repeat="todo in selectedModality">       	            
+					<div class="row">
+						<span >
+							<div class="input-field col s6">
+								 <input id="ModalityU" type="text" class="validate" required>
+      	                     <label for="ModalityU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+							</div>
+						</span>		              			
+					</li>
+				</ul>
     	<div class="row">
     		<div class="col s2">Comercialización</div>
     		<div class="col s4">
@@ -1468,6 +1479,7 @@
     			</select>
     		</div>
     	</div>
+			</div>
     	 	<div class="row">
     		<div class="col s2">Plan sanitario</div>
     		
@@ -1566,7 +1578,6 @@
 						</span>		              			
 					</li>
 				</ul>
-			</div>
 
     	  <div class="row">
 			<div class="input-field col s6">
@@ -1596,6 +1607,7 @@
 					</li>
 				</ul>
 			</div>
+			</div>
 			<div class="row">
 			<div class="input-field col s6">
 				<select id="selectedMachine" name="selectedMachine" ng-model="selectedMachine" multiple>
@@ -1623,7 +1635,6 @@
 						</span>		              			
 					</li>
 				</ul>
-			</div>
 			<div class="row">
 			<div class="input-field col s6">
 				<select id="selectedFacilities" name="selectedFacilities" ng-model="selectedFacilities" multiple>
@@ -1649,9 +1660,7 @@
 					</li>
 				</ul>
 			</div>
-
-
-
+			</div>
 
     </div><!--fin de bloque rumiante-->
     <!--inicio bloque porcino-->
@@ -1874,7 +1883,6 @@
       					</span>		              			
       				</li>
       			</ul>
-      			</div>
       			<div class="row">
       				<div class="input-field col s6">
       					<select id="selectedCommercialization" name="selectedCommercialization" ng-model="selectedCommercialization" multiple>
@@ -1895,6 +1903,7 @@
       						</span>		              			
       					</li>
       				</ul>
+      			</div>
       			</div>
 
    					<div class="row">
@@ -1924,7 +1933,6 @@
       								</span>		              			
       							</li>
       						</ul>
-      					</div>
       					<div class="row">
       					<div class="input-field col s6">
       						<select id="selectedMachine" name="selectedMachine" ng-model="selectedMachine" multiple>
@@ -1950,6 +1958,7 @@
       							</li>
       						</ul>
       					</div>
+      					</div>
       					<div class="row">
       					<div class="input-field col s6">
       						<select id="selectedFacilities" name="selectedFacilities" ng-model="selectedFacilities" multiple>
@@ -1974,7 +1983,6 @@
       								</span>		              			
       							</li>
       						</ul>
-      					</div>
       					<div class="row">
       						<div class="col s2">TRÁMITES O PERMISOS</div>
       						<div class="col s4">
@@ -1997,6 +2005,7 @@
       							</select>
       						</div>
       					</div>  
+      					</div>
       				</div>     			
       			</div>
       <!--fin porcino--> 
@@ -2005,193 +2014,257 @@
       <!--inicio apicola-->
         <div ng-show="subsectorApicola">
         <div class="row">
-      					<div class="input-field col s6">
-      						<select id="selectedProduction" name="selectedProduction" ng-model="selectedProduction" multiple>
-		    					<option value="" disabled selected>Seleccione Produccion Apicola</option>
-      							<option>Miel</option>
-      							<option>Cera</option>
-      							<option>Polen</option>
-      							<option>Jalea real</option>
-      							<option>Propoleo</option>
-      							<option>Apitoxina</option>
-      						</select>
-      						<label for="selectedProduction">Produccion Apicola</label>
-      					</div>	
-      					<ul>
-      						<li ng-repeat="todo in selectedProduction">       	            
-      							<div class="row">
-      								<span>
-      									<div class="input-field col s6">
-      										 <input id="Productionp" type="text" class="validate" required>
-	                  	                     <label for="Productionp" data-error="Campo requerido" data-success="OK!">KG ({{todo}})</label>
-      									</div>
-      								</span>		              			
-      							</li>
-      						</ul>
-      					</div>
-      					<div class="row">
-      						<div class="col s2">Meses de cosecha</div>
-      						<div class="col s4">
-      							<select ng-model="selectedMonths" multiple>
-      								<option>Enero</option>
-      								<option>Febrero</option>
-      								<option>Marzo</option>
-      								<option>Abril</option>
-      								<option>Mayo</option>
-      								<option>Junio</option>
-      								<option>Julio</option>
-      								<option>Agosto</option>
-      								<option>Septiembre</option>
-      								<option>Octubre</option>
-      								<option>Noviembre</option>
-      								<option>Diciembre</option>
-      							</select>
-      						</div>
-      					</div>
-      					<div class="row">
-      						<div class="input-field col s6">
-      							<select id="selectedRaces" name="selectedRaces" ng-model="selectedRaces" multiple>
-      								<option value="" disabled selected>Seleccione Razas</option>
-      								<option>Apis mellifera ligustica (italiana)</option>
-      								<option>Apis mellifera iberica (espanola)</option>
-      								<option>Apis mellifera scutellata</option>
-      								<option>Melipona (sin aguijon)</option>
-      							</select>
-      							<label for="selectedRaces">Razas</label>
-      						</div>	
-      						<ul>
-      							<li ng-repeat="todo in selectedRaces">       	            
-      								<div class="row">
-      									<span >
-      										<div class="input-field col s6">
-      											<input id="Racesp" type="text" class="validate" required>
-      											<label for="Racesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-      										</div>
-      									</span>		              			
-      								</li>
-      							</ul>
-      						</div>
-      						<div class="row">
-      							<div class="input-field col s6">
-      								<select id="selectedExploitation" name="selectedExploitation" ng-model="selectedExploitation" multiple>
-      									<option value="" disabled selected>Seleccione tipo de explotacion</option>
-      									<option>Grande</option>
-      									<option>Mediano</option>
-      									<option>Pequeno</option>
-      								</select>
-      								<label for="selectedExploitation">tipo de explotacion</label>
-      							</div>	
-      							<ul>
-      								<li ng-repeat="todo in selectedExploitation">
-      									<span >
-      										<div class="input-field col s6">
-      											<input id="ExploitationU" type="text" class="validate" required>
-      											<label for="ExploitationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
-      										</div>
-      									</span>		              			
-      								</li>
-      							</ul>
-      						</div>
-      						<div class="row">
-      							<div class="input-field col s6">
-      								<select id="selectedHive" name="selectedHive" ng-model="selectedHive" multiple>
-      									<option value="" disabled selected>Seleccione Tipo de Colmena</option>
-      									<option>Langtroth</option>
-      									<option>Datant</option>
-      									<option>Layens</option>
-      									<option>Rustica</option>
-      									<option>Otros</option>
-      								</select>
-      								<label for="selectedHive">Tipo de Colmena</label>
-      							</div>	
-      							<ul>
-      								<li ng-repeat="todo in selectedHive">         	            
-      									<div class="row">
-      										<span >
-      											<div class="input-field col s6">
-      												<input id="Hivesinproduction" type="text" class="validate" required>
-      												<label for="Hivesinproduction" data-error="Campo requerido" data-success="OK!">Cantidad total de colmenas en produccion ({{todo}})</label>
-      											</div>
-      											<div class="input-field col s6">
-      												<input id="Numberofqueens" type="text" class="validate" required>
-      												<label for="Numberofqueens" data-error="Campo requerido" data-success="OK!">Cantidad de reinas ({{todo}})</label>
-      											</div>
-      										</span>
-      									</div>
-      								</li>
-      							</ul>
-      						</div>
-      						<div class="row">
-      						<div class="col s2">Plan sanitario </div>
+			<div class="input-field col s6">
+				<select id="selectedProduction" name="selectedProduction" ng-model="selectedProduction" multiple>
+				<option value="" disabled selected>Seleccione Produccion Apicola</option>
+					<option>Miel</option>
+					<option>Cera</option>
+					<option>Polen</option>
+					<option>Jalea real</option>
+					<option>Propoleo</option>
+					<option>Apitoxina</option>
+				</select>
+				<label for="selectedProduction">Produccion Apicola</label>
+			</div>	
+			<ul>
+				<li ng-repeat="todo in selectedProduction">       	            
+					<div class="row">
+						<span>
+							<div class="input-field col s6">
+								 <input id="Productionp" type="text" class="validate" required>
+      	                     <label for="Productionp" data-error="Campo requerido" data-success="OK!">KG ({{todo}})</label>
+							</div>
+						</span>		              			
+					</li>
+				</ul>
+			<div class="row">
+				<div class="col s2">Meses de cosecha</div>
+				<div class="col s4">
+					<select ng-model="selectedMonths" multiple>
+						<option>Enero</option>
+						<option>Febrero</option>
+						<option>Marzo</option>
+						<option>Abril</option>
+						<option>Mayo</option>
+						<option>Junio</option>
+						<option>Julio</option>
+						<option>Agosto</option>
+						<option>Septiembre</option>
+						<option>Octubre</option>
+						<option>Noviembre</option>
+						<option>Diciembre</option>
+					</select>
+				</div>
+			</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<select id="selectedRaces" name="selectedRaces" ng-model="selectedRaces" multiple>
+						<option value="" disabled selected>Seleccione Razas</option>
+						<option>Apis mellifera ligustica (italiana)</option>
+						<option>Apis mellifera iberica (espanola)</option>
+						<option>Apis mellifera scutellata</option>
+						<option>Melipona (sin aguijon)</option>
+					</select>
+					<label for="selectedRaces">Razas</label>
+				</div>	
+				<ul>
+					<li ng-repeat="todo in selectedRaces">       	            
+						<div class="row">
+							<span >
+								<div class="input-field col s6">
+									<input id="Racesp" type="text" class="validate" required>
+									<label for="Racesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+								</div>
+							</span>		              			
+						</li>
+					</ul>
+				<div class="row">
+					<div class="input-field col s6">
+						<select id="selectedExploitation" name="selectedExploitation" ng-model="selectedExploitation" multiple>
+							<option value="" disabled selected>Seleccione tipo de explotacion</option>
+							<option>Grande</option>
+							<option>Mediano</option>
+							<option>Pequeno</option>
+						</select>
+						<label for="selectedExploitation">tipo de explotacion</label>
+					</div>	
+					<ul>
+						<li ng-repeat="todo in selectedExploitation">
+							<span >
+								<div class="input-field col s6">
+									<input id="ExploitationU" type="text" class="validate" required>
+									<label for="ExploitationU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+								</div>
+							</span>		              			
+						</li>
+					</ul>
+				</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<select id="selectedHive" name="selectedHive" ng-model="selectedHive" multiple>
+							<option value="" disabled selected>Seleccione Tipo de Colmena</option>
+							<option>Langtroth</option>
+							<option>Datant</option>
+							<option>Layens</option>
+							<option>Rustica</option>
+							<option>Otros</option>
+						</select>
+						<label for="selectedHive">Tipo de Colmena</label>
+					</div>	
+					<ul>
+						<li ng-repeat="todo in selectedHive">         	            
+							<div class="row">
+								<span >
+									<div class="input-field col s6">
+										<input id="Hivesinproduction" type="text" class="validate" required>
+										<label for="Hivesinproduction" data-error="Campo requerido" data-success="OK!">Cantidad total de colmenas en produccion ({{todo}})</label>
+									</div>
+									<div class="input-field col s6">
+										<input id="Numberofqueens" type="text" class="validate" required>
+										<label for="Numberofqueens" data-error="Campo requerido" data-success="OK!">Cantidad de reinas ({{todo}})</label>
+									</div>
+								</span>
+							</div>
+						</li>
+					</ul>
+				<div class="row">
+				<div class="col s2">Plan sanitario </div>
 
-      						<div class="col s3">Varroa(control)
-      							<input type="radio" name="Varroa" id="Varroa" value="Si"/> 
-      							<label for="Varroa">Si</label>
-      							<input type="radio" name="Varroa" id="Varroan" value="No"/>
-      							<label for="Varroan">No</label>
-      						</div>
-      						<div class="col s3">Polilla(control)
-      							<input type="radio" name="Polilla" id="Polilla" value="Si"/> 
-      							<label for="Polilla">Si</label>
-      							<input type="radio" name="Polilla" id="Polillan" value="No"/>
-      							<label for="Polillan">No</label>
-      						</div>
-      						<div class="col s3">Otros
-      							<input type="radio" name="Otros" id="Otros" value="Si"/> 
-      							<label for="Otros">Si</label>
-      							<input type="radio" name="Otros" id="Otrosn" value="No"/>
-      							<label for="Otrosn">No</label>
-      						</div>
-      						</div>
-      						<div class="row">
+				<div class="col s1">Varroa(control)
+					<input type="radio" name="Varroa" id="Varroa" value="Si"/> 
+					<label for="Varroa">Si</label>
+					<input type="radio" name="Varroa" id="Varroan" value="No"/>
+					<label for="Varroan">No</label>
+				</div>
+				<div class="col s1">Polilla(control)
+					<input type="radio" name="Polilla" id="Polilla" value="Si"/> 
+					<label for="Polilla">Si</label>
+					<input type="radio" name="Polilla" id="Polillan" value="No"/>
+					<label for="Polillan">No</label>
+				</div>
+				<div class="col s1">Otros
+					<input type="radio" name="Otros" id="Otros" value="Si"/> 
+					<label for="Otros">Si</label>
+					<input type="radio" name="Otros" id="Otrosn" value="No"/>
+					<label for="Otrosn">No</label>
+				</div>
+				</div>
+				</div>
+				<div class="row">
 
-      						<div class="col s2">Equipamiento</div>
+				<div class="col s2">Equipamiento</div>
 
-      						<div class="col s3">Ahumador
-      							<input type="radio" name="Ahumador" id="Ahumador" value="Si"/> 
-      							<label for="Ahumador">Si</label>
-      							<input type="radio" name="Ahumador" id="Ahumadorn" value="No"/>
-      							<label for="Ahumadorn">No</label>
-      						</div>
-      						<div class="col s3">Alimentador
-      							<input type="radio" name="Alimentador" id="Alimentador" value="Si"/> 
-      							<label for="Alimentador">Si</label>
-      							<input type="radio" name="Alimentador" id="Alimentadorn" value="No"/>
-      							<label for="Alimentadorn">No</label>
-      						</div>
-      						<div class="col s3">Alza cuadros
-      							<input type="radio" name="Alzacuadros" id="Alzacuadros" value="Si"/> 
-      							<label for="Alzacuadros">Si</label>
-      							<input type="radio" name="Alzacuadros" id="Alzacuadrosn" value="No"/>
-      							<label for="Alzacuadrosn">No</label>
-      						</div>
-      					</div>
-      					<div class="row">
-      						<div class="col s2">TRÁMITES O PERMISOS</div>
-      						<div class="col s4">
-      							<select ng-model="selectedIrrigation" multiple>
-      								<option>Certificado de Sacrificio de hembras Bovinas y/o Bufalinas</option>
-      								<option>Inspección de Carga Fito y Zoosanitaria</option>
-      								<option>Permiso Sanitario de importación de Plaguicidas ( otorgada por INSAI )</option>
-      								<option>Permiso Sanitario o aval de vacunación emitido por el INSAI (Instituto Nacional de Salud Agrícola Integral)</option>
-      								<option>Permisos de Insumos Agrícolas ( otorgada por INSAI )</option>
-      								<option>Permisos de servicios Pecuarios ( otorgada por INSAI )</option>
-      								<option>Permisos Fitosanitario de importación ( otorgada por INSAI )</option>
-      								<option>Permiso Sanitario de importación de Plaguicidas</option>
-      								<option>Beneficiario de financiamiento </option>
-      								<option>Beneficiario de financiamiento </option>
-      								<option>Cosecha arrimada en  Silo</option>
-      								<option>Historial de insumos adquiridos</option>
-      								<option>Beneficiario de financiamiento </option>
-      								<option>Beneficiario de asesoramiento técnico</option>
+				<div class="col s3">Ahumador
+					<input type="radio" name="Ahumador" id="Ahumador" value="Si"/> 
+					<label for="Ahumador">Si</label>
+					<input type="radio" name="Ahumador" id="Ahumadorn" value="No"/>
+					<label for="Ahumadorn">No</label>
+				</div>
+				<div class="col s3">Alimentador
+					<input type="radio" name="Alimentador" id="Alimentador" value="Si"/> 
+					<label for="Alimentador">Si</label>
+					<input type="radio" name="Alimentador" id="Alimentadorn" value="No"/>
+					<label for="Alimentadorn">No</label>
+				</div>
+				<div class="col s3">Alza cuadros
+					<input type="radio" name="Alzacuadros" id="Alzacuadros" value="Si"/> 
+					<label for="Alzacuadros">Si</label>
+					<input type="radio" name="Alzacuadros" id="Alzacuadrosn" value="No"/>
+					<label for="Alzacuadrosn">No</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2">TRÁMITES O PERMISOS</div>
+				<div class="col s4">
+					<select ng-model="selectedIrrigation" multiple>
+						<option>Certificado de Sacrificio de hembras Bovinas y/o Bufalinas</option>
+						<option>Inspección de Carga Fito y Zoosanitaria</option>
+						<option>Permiso Sanitario de importación de Plaguicidas ( otorgada por INSAI )</option>
+						<option>Permiso Sanitario o aval de vacunación emitido por el INSAI (Instituto Nacional de Salud Agrícola Integral)</option>
+						<option>Permisos de Insumos Agrícolas ( otorgada por INSAI )</option>
+						<option>Permisos de servicios Pecuarios ( otorgada por INSAI )</option>
+						<option>Permisos Fitosanitario de importación ( otorgada por INSAI )</option>
+						<option>Permiso Sanitario de importación de Plaguicidas</option>
+						<option>Beneficiario de financiamiento </option>
+						<option>Beneficiario de financiamiento </option>
+						<option>Cosecha arrimada en  Silo</option>
+						<option>Historial de insumos adquiridos</option>
+						<option>Beneficiario de financiamiento </option>
+						<option>Beneficiario de asesoramiento técnico</option>
 
-      							</select>
-      						</div>
-      					</div>  
-
-
-      				</div>	
+					</select>
+				</div>
+			</div>  
+		</div>	
       <!--fin de apicola-->
+      <!--inicio de cunicola-->
+      <div  ng-show="subsectorCunicola">
+      	<div class="row">
+		<div class="col s2">Rubros</div>
+		<div class="col s4">
+			<select ng-model="selectedSanitaryplan" multiple>
+				<option>Grande</option>
+				<option>Mediano</option>
+				<option>Pequeño</option>
+			</select>
+		</div>
+		<div class="row">
+		<div class="input-field col s6">
+			<select id="selectedAgeclass" name="selectedAgeclass" ng-model="selectedAgeclass" multiple>
+				<option value="" disabled selected>Seleccione Clase etaria</option>
+			<option>Hembra lactante</option>
+			<option>Hembra gestando y lactando</option>
+			</select>
+			<label for="selectedAgeclass">Clase etaria</label>
+		</div>	
+		<ul>
+			<li ng-repeat="todo in selectedAgeclass">
+				<span >
+					<div class="input-field col s6">
+						<input id="AgeclassU" type="text" class="validate" required>
+						<label for="AgeclassU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+					</div>
+				</span>		              			
+			</li>
+		</ul>
+	</div>
+	</div>
+	<div class="row">
+	<div class="input-field col s6">
+		<select id="selectedRaces" name="selectedRaces" ng-model="selectedRaces" multiple>
+			<option value="" disabled selected>Seleccione Razas</option>
+			<option>California</option>
+			<option>Nueva zelanda</option>
+			<option>Mariposa</option>
+			<option>Gigante de flandes</option>
+		</select>
+		<label for="selectedRaces">Razas</label>
+	</div>	
+	<ul>
+		<li ng-repeat="todo in selectedRaces">       	            
+			<div class="row">
+				<span >
+					<div class="input-field col s6">
+						<input id="Racesp" type="text" class="validate" required>
+						<label for="Racesp" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+					</div>
+				</span>		              			
+			</li>
+		</ul>
+		  <div class="row">
+          <div class="col s2">Plan sanitario</div>
+          <div class="col s4">mixomatosis
+            <input type="radio" name="sanitaryplan" id="sanitaryplans" value="Si"/> 
+            <label for="sanitaryplans">Si</label>
+            <input type="radio" name="sanitaryplan" id="sanitaryplann" value="No"/>
+            <label for="sanitaryplann">No</label>
+          </div>
+	        </div>
+		</div>
+      </div><!--fin de cunicola-->
+      
 
 </div><!---fin de pecurio-->
 

@@ -38,6 +38,7 @@ angular.module("Runoppa", [])
     $scope.selectedMonths= null;
     $scope.selectedRaces= null;
     $scope.selectedCapacity= null;
+    $scope.selectedModality= null;
     $scope.selectedIrrigation= null;
     $scope.cycle= '';
     $scope.vegetalBlock= false;
