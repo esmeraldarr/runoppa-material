@@ -1,0 +1,69 @@
+            <div class="row">
+						<div class="input-field col s6>
+							<select id="selectedMachine" name="selectedMachine" ng-model="selectedMachine" multiple>
+						    	<option value="" disabled selected>Seleccione la maquinaria/equipos</option>
+								<option>Tractor 120 Hp</option>
+		                		<option>Tractor 100 Hp</option>
+		                		<option>Tractor < 80Hp</option>
+		                		<option>Rastroexcavadora</option>
+		                		<option>Airedores</option>
+		                		<option>Zorra</option>
+		                		<option>Carretas</option>
+		                		<option>Cultivadoras de pasto</option>
+		                		<option>Palas para Tractores</option>
+						    </select>
+						    <label for="selectedMachine">Maquinarias y equipos</label>
+						</div>	
+						</div>
+
+ 					<ul>
+					    <li ng-repeat="todo in selectedMachine">         	            
+							<div class="row">
+					        <span >
+					        	<div class="input-field col s6">
+					                        <input id="organismup" type="text" class="validate" required>
+					                        <label for="organismup" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+					            </div>
+
+					        </span></br>
+
+					</div>
+					</li>
+					</ul>
+
+
+
+					<!--no va aqui
+						<div class="row">
+						<div class="input-field col s12">
+							<select id="selectedBuilding" name="selectedBuilding" ng-model="selectedBuilding" multiple>
+						    	<option value="" disabled selected>Seleccione las Instalaciones y/o Equipamientos</option>
+			                  	<option>Vivienda Principal</option>
+								<option>Vivienda para Obreros</option>
+								<option>Taller</option>
+								<option>Area administrativa</option>
+								<option>Laboratorio</option>
+								<option>Depósitos</option>
+								<option>Galpon de Almacenamiento de alimentos</option>
+								<option>Galpon de Almacenamiento de Herramientas, equipos y Maquinarias</option>
+
+						    </select>
+						    <label for="selectedMachine">Instalación y Equipamiento</label>
+						</div>	
+		            </div>
+
+					<ul>
+					    <li ng-repeat="todo in selectedBuilding">         	            
+							<div class="row">
+					        <span >
+					        	<div class="input-field col s6">
+					                        <input id="buildingU" type="text" class="validate" required>
+					                        <label for="buildingU" data-error="Campo requerido" data-success="OK!">Unidades ({{todo}})</label>
+					            </div>
+
+					        </span></br>
+
+					</div>
+					</li>
+					</ul>		            
+-->
