@@ -25,6 +25,9 @@ angular.module("Runoppa", [])
     $scope.selectedDestiny= null;
     $scope.selectedBuilding= null;
     $scope.selectedAgeclass= null;
+    $scope.selectedAgeclassb= null;
+    $scope.selectedAgeclassc= null;
+    $scope.selectedAgeclasso= null;
     $scope.selectedSow= null;
     $scope.selectedPiglet= null;
     $scope.selectedboar= null;
@@ -39,6 +42,8 @@ angular.module("Runoppa", [])
     $scope.selectedRaces= null;
     $scope.selectedCapacity= null;
     $scope.selectedModality= null;
+    $scope.selectedGenetics= null;
+    $scope.selectedEggs= null;
     $scope.selectedIrrigation= null;
     $scope.cycle= '';
     $scope.vegetalBlock= false;
@@ -59,6 +64,7 @@ angular.module("Runoppa", [])
     $scope.subsectorApicola= false;
     $scope.subsectorCunicola= false;
     $scope.hembra= false;
+    $scope.hembraporcino= false;
     $scope.codorniz= false;
     $scope.patos= false;
     $scope.gansos= false;
@@ -539,6 +545,14 @@ if ($scope.hembra) {
         }
     };
 
+ $scope.hembraporcinoSelected = function () {
+if ($scope.hembraporcino) {
+            $scope.hembraporcinoBlock = false;
+        }
+        else {
+            $scope.hembraporcinoBlock = true;
+        }
+    };
 
 
 
